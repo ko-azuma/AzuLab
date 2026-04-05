@@ -1,0 +1,16 @@
+.active {
+  border-bottom: 2px solid white;
+}
+.logo {
+  font-family:
+    "MS Mincho",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+nav {
+  margin-left: auto;
+}
