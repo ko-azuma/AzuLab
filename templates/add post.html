@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="page-title">記事追加</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+  <label>記事名</label><br>
+  <input type="text" name="blg_nm" required><br><br>
+
+  <label>画像</label><br>
+  <input type="file" name="image"><br><br>
+
+  <label>カテゴリー</label><br>
+  <input type="text" name="blg_ctg"><br><br>
+
+  <label>詳細</label><br>
+  <textarea name="blg_dtl"></textarea><br><br>
+
+  <label>URL</label><br>
+  <input type="text" name="blg_url"><br><br>
+
+  <button type="submit">追加</button>
+
+</form>
+
+{% endblock %}

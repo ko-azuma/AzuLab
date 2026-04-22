@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="page-title">記事編集</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+  <label>記事名</label><br>
+  <input type="text" name="blg_nm" value="{{ article.blg_nm }}" required><br><br>
+
+  <label>現在の画像</label><br>
+  {% if article.blg_img_pt %}
+    <img src="{{ url_for('static', filename=article.blg_img_pt) }}" width="200"><br>
+  {% endif %}
+
+  <label>画像変更</label><br>
+  <input type="file" name="image"><br><br>
+
+  <label>カテゴリー</label><br>
+  <input type="text" name="blg_ctg" value="{{ article.blg_ctg }}"><br><br>
+
+  <label>詳細</label><br>
+  <textarea name="blg_dtl">{{ article.blg_dtl }}</textarea><br><br>
+
+  <label>URL</label><br>
+  <input type="text" name="blg_url" value="{{ article.blg_url }}"><br><br>
+
+  <button type="submit">更新</button>
+
+</form>
+
+{% endblock %}

@@ -83,6 +83,26 @@ class Article(db.Model):
     rec_upd_usr_id = db.Column(db.String(10))
     rec_upd_tmstmp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+class Work(db.Model):
+    __tablename__ = "wrk010"
+
+    blg_id = db.Column(db.String(10), primary_key=True)
+    blg_nm = db.Column(db.String(255), nullable=False)
+    blg_img_pt = db.Column(db.String(200))
+    blg_ctg = db.Column(db.String(20))
+    blg_dtl = db.Column(db.String(1000))
+    blg_url = db.Column(db.String(200))
+
+    dlt_flg = db.Column(db.String(1), default='0')
+
+    rec_crtn_prg_id = db.Column(db.String(50))
+    rec_crtn_usr_id = db.Column(db.String(10))
+    rec_crtn_tmstmp = db.Column(db.DateTime, default=datetime.utcnow)
+
+    rec_upd_prg_id = db.Column(db.String(50))
+    rec_upd_usr_id = db.Column(db.String(10))
+    rec_upd_tmstmp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
 class Contact(db.Model):
     __tablename__ = "ctc010"
 
@@ -140,6 +160,16 @@ logging.basicConfig(
 logging.info("トップページ表示")
 logging.warning("ログイン失敗")
 logging.error("DB接続エラー")
+
+from functools import wraps
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if "user_id" not in session:
+            return redirect("/login")
+        return f(*args, **kwargs)
+    return decorated_function
 # ルート
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -150,7 +180,24 @@ def profile():
 
 @app.route("/works")
 def works():
-    return "<h1>作品一覧</h1>"
+    page = request.args.get("page", 1, type=int)
+
+    pagination = Work.query.filter_by(dlt_flg='0') \
+        .order_by(Work.rec_crtn_tmstmp.desc()) \
+        .paginate(page=page, per_page=20)
+
+    works = pagination.items
+
+    return render_template(
+        "works.html",
+        works=works,
+        pagination=pagination
+    )
+
+@app.route("/works/<string:wrk_id>")
+def work_detail(wrk_id):
+    work = Work.query.get_or_404(wrk_id)
+    return render_template("work_detail.html", work=work)
 
 @app.route("/articles")
 def articles():
@@ -163,6 +210,161 @@ def contact():
 @app.route("/login")
 def login():
     return "<h1>ログイン</h1>"
+
+@app.route("/articles/add", methods=["GET", "POST"])
+@login_required
+def add_article():
+
+    if request.method == "POST":
+
+        file = request.files.get("image")
+        filename = None
+
+        if file and allowed_file(file.filename):
+            filename = str(uuid.uuid4()) + "_" + secure_filename(file.filename)
+            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+
+        blg_id = str(uuid.uuid4())[:10]
+
+        article = Article(
+            blg_id=blg_id,
+            blg_nm=request.form["blg_nm"],
+            blg_img_pt=f"uploads/{filename}" if filename else None,
+            blg_ctg=request.form["blg_ctg"],
+            blg_dtl=request.form["blg_dtl"],
+            blg_url=request.form["blg_url"],
+            dlt_flg='0',
+            rec_crtn_prg_id="ADD_ARTICLE",
+            rec_crtn_usr_id=session.get("user_id"),
+            rec_crtn_tmstmp=datetime.utcnow()
+        )
+
+        db.session.add(article)
+        db.session.commit()
+
+        return redirect(url_for("articles"))
+
+    return render_template("article_add.html")
+
+@app.route("/articles/edit/<string:blg_id>", methods=["GET", "POST"])
+@login_required
+def edit_article(blg_id):
+
+    article = Article.query.get_or_404(blg_id)
+
+    if request.method == "POST":
+
+        file = request.files.get("image")
+
+        if file and allowed_file(file.filename):
+            filename = str(uuid.uuid4()) + "_" + secure_filename(file.filename)
+            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+            article.blg_img_pt = f"uploads/{filename}"
+
+        article.blg_nm = request.form["blg_nm"]
+        article.blg_ctg = request.form["blg_ctg"]
+        article.blg_dtl = request.form["blg_dtl"]
+        article.blg_url = request.form["blg_url"]
+
+        article.rec_upd_usr_id = session.get("user_id")
+        article.rec_upd_tmstmp = datetime.utcnow()
+
+        db.session.commit()
+
+        return redirect(url_for("articles"))
+
+    return render_template("article_edit.html", article=article)
+
+import uuid
+from datetime import datetime
+
+@app.route("/works/add", methods=["GET", "POST"])
+def add_work():
+    if "user_id" not in session:
+        return redirect("/login")
+    if request.method == "POST":
+        wrk_id = str(uuid.uuid4())[:10]  # 簡易ID生成
+
+        work = Work(
+            wrk_id=wrk_id,
+            wrk_nm=request.form["wrk_nm"],
+            wrk_ctg=request.form["wrk_ctg"],
+            wrk_dtl=request.form["wrk_dtl"],
+            wrk_url=request.form["wrk_url"],
+            dlt_flg='0',
+            rec_crtn_prg_id="ADD_WORK",
+            rec_crtn_usr_id=session.get("user_id", "SYSTEM"),
+            rec_crtn_tmstmp=datetime.utcnow()
+        )
+
+        db.session.add(work)
+        db.session.commit()
+
+        return redirect(url_for("works"))
+
+    return render_template("work_add.html")
+
+@app.route("/works/add", methods=["GET", "POST"])
+@login_required
+def add_work():
+    if request.method == "POST":
+
+        file = request.files.get("image")
+        filename = None
+
+        if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+
+        wrk_id = str(uuid.uuid4())[:10]
+
+        work = Work(
+            wrk_id=wrk_id,
+            wrk_nm=request.form["wrk_nm"],
+            wrk_img_pt=f"uploads/{filename}" if filename else None,
+            wrk_ctg=request.form["wrk_ctg"],
+            wrk_dtl=request.form["wrk_dtl"],
+            wrk_url=request.form["wrk_url"],
+            dlt_flg='0',
+            rec_crtn_prg_id="ADD_WORK",
+            rec_crtn_usr_id=session.get("user_id", "SYSTEM"),
+            rec_crtn_tmstmp=datetime.utcnow()
+        )
+
+        db.session.add(work)
+        db.session.commit()
+
+        return redirect(url_for("works"))
+
+    return render_template("work_add.html")
+
+@app.route("/works/edit/<string:wrk_id>", methods=["GET", "POST"])
+@login_required
+def edit_work(wrk_id):
+
+    work = Work.query.get_or_404(wrk_id)
+
+    if request.method == "POST":
+
+        # 画像処理
+        file = request.files.get("image")
+
+        if file and allowed_file(file.filename):
+            filename = str(uuid.uuid4()) + "_" + secure_filename(file.filename)
+            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+            work.wrk_img_pt = f"uploads/{filename}"
+
+        # テキスト更新
+        work.wrk_nm = request.form["wrk_nm"]
+        work.wrk_ctg = request.form["wrk_ctg"]
+        work.wrk_dtl = request.form["wrk_dtl"]
+        work.wrk_url = request.form["wrk_url"]
+
+        db.session.commit()
+
+        return redirect(url_for("works"))
+
+    return render_template("work_edit.html", work=work)
 # 初期データ作成
 def create_initial_user():
     from werkzeug.security import generate_password_hash
