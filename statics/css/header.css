@@ -1,16 +1,41 @@
-.active {
-  border-bottom: 2px solid white;
+body {
+  margin: 0;
+  font-family: "MS Mincho", serif;
 }
-.logo {
-  font-family:
-    "MS Mincho",
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    serif;
-  font-size: 24px;
+
+/* ヘッダー */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+}
+
+.logo a {
   color: white;
+  font-size: 24px;
   text-decoration: none;
 }
+
 nav {
   margin-left: auto;
+}
+
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* コンテンツ */
+.content {
+  padding: 20px;
+}
+
+/* フラッシュ */
+.flash-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  margin: 10px;
 }

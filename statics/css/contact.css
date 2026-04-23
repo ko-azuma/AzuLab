@@ -1,0 +1,15 @@
+form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+}
+
+button {
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}

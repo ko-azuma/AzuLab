@@ -1,0 +1,17 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item form {
+  display: inline;
+}
+
+button {
+  margin-left: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}

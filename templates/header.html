@@ -2,67 +2,60 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>{% block title %}AzuLab{% endblock %}</title>
+  <title>AzuLab</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      background: #222;
-      padding: 10px 20px;
-    }
-
-    /* ロゴ（AzuLab） */
-    .logo {
-      font-family: "MS Mincho", "ＭＳ 明朝", serif;
-      font-size: 24px;
-      color: white;
-      margin-right: 30px;
-      text-decoration: none;
-    }
-
-    /* ナビゲーション */
-    nav a {
-      color: white;
-      margin-right: 20px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      padding: 30px;
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<header>
-  <!-- AzuLab（トップリンク） -->
-  <a href="/" class="logo">AzuLab</a>
+<!-- ヘッダー -->
+<header class="header">
 
-  <!-- メニュー -->
+  <div class="logo">
+    <a href="{{ url_for('index') }}">AzuLab</a>
+  </div>
+
   <nav>
-    <a href="/profile">プロフィール</a>
-    <a href="/works">作品一覧</a>
-    <a href="/articles">記事一覧</a>
-    <a href="/contact">お問い合わせ</a>
-    <a href="/login">管理者ログイン</a>
+    {% if session.get("user_id") %}
+
+      <!-- ログイン後 -->
+      <a href="{{ url_for('dashboard') }}">ダッシュボード</a>
+      <a href="{{ url_for('add_work') }}">作品追加</a>
+      <a href="{{ url_for('add_article') }}">記事追加</a>
+      <a href="{{ url_for('logout') }}">ログアウト</a>
+      <a href="{{ url_for('change_password') }}">パスワード変更</a>
+    {% else %}
+
+      <!-- ログイン前 -->
+      <a href="{{ url_for('profile') }}">プロフィール</a>
+      <a href="{{ url_for('works') }}">作品一覧</a>
+      <a href="{{ url_for('articles') }}">記事一覧</a>
+      <a href="{{ url_for('contact') }}">お問い合わせ</a>
+      <a href="{{ url_for('login') }}">管理者ログイン</a>
+
+    {% endif %}
   </nav>
+
 </header>
 
-<div class="container">
-  {% block content %}{% endblock %}
+<!-- フラッシュメッセージ -->
+<div class="flash">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="flash-message">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
 </div>
+
+<!-- メインコンテンツ -->
+<main class="content">
+  {% block content %}
+  {% endblock %}
+</main>
 
 </body>
 </html>

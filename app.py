@@ -203,13 +203,166 @@ def work_detail(wrk_id):
 def articles():
     return "<h1>記事一覧</h1>"
 
-@app.route("/contact")
+import uuid
+from datetime import datetime
+
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
-    return "<h1>お問い合わせ</h1>"
+
+    if request.method == "POST":
+
+        ctc_id = str(uuid.uuid4())[:10]
+
+        contact = Contact(
+            ctc_id=ctc_id,
+            ctc_nm=request.form["ctc_nm"],
+            ctc_nm_kn=request.form.get("ctc_nm_kn"),
+            ctc_ml=request.form.get("ctc_ml"),
+            ctc_hn=request.form.get("ctc_hn"),
+            ctc_dtl=request.form.get("ctc_dtl"),
+            dlt_flg='0',
+            rec_crtn_prg_id="CONTACT",
+            rec_crtn_usr_id="GUEST",
+            rec_crtn_tmstmp=datetime.utcnow()
+        )
+
+        db.session.add(contact)
+        db.session.commit()
+
+        return redirect(url_for("top"))
+
+    return render_template("contact.html")
 
 @app.route("/login")
 def login():
     return "<h1>ログイン</h1>"
+
+@app.route("/dashboard")
+@login_required
+def dashboard():
+
+    # 作品ページ
+    work_page = request.args.get("work_page", 1, type=int)
+    work_pagination = Work.query.filter_by(dlt_flg='0') \
+        .order_by(Work.rec_crtn_tmstmp.desc()) \
+        .paginate(page=work_page, per_page=20)
+
+    # 記事ページ
+    article_page = request.args.get("article_page", 1, type=int)
+    article_pagination = Article.query.filter_by(dlt_flg='0') \
+        .order_by(Article.rec_crtn_tmstmp.desc()) \
+        .paginate(page=article_page, per_page=20)
+
+    # 問い合わせページ
+    contact_page = request.args.get("contact_page", 1, type=int)
+    contact_pagination = Contact.query.filter_by(dlt_flg='0') \
+        .order_by(Contact.rec_crtn_tmstmp.desc()) \
+        .paginate(page=contact_page, per_page=20)
+
+    return render_template(
+        "dashboard.html",
+        works=work_pagination.items,
+        work_pagination=work_pagination,
+        articles=article_pagination.items,
+        article_pagination=article_pagination,
+        contacts=contact_pagination.items,
+        contact_pagination=contact_pagination
+    )
+
+@app.route("/works/delete/<string:wrk_id>", methods=["POST"])
+@login_required
+def delete_work(wrk_id):
+    work = Work.query.get_or_404(wrk_id)
+
+    work.dlt_flg = '1'
+    work.rec_upd_usr_id = session.get("user_id")
+    work.rec_upd_tmstmp = datetime.utcnow()
+
+    db.session.commit()
+
+    return redirect(url_for("dashboard"))
+
+@app.route("/articles/delete/<string:blg_id>", methods=["POST"])
+@login_required
+def delete_article(blg_id):
+    article = Article.query.get_or_404(blg_id)
+
+    article.dlt_flg = '1'
+    article.rec_upd_usr_id = session.get("user_id")
+    article.rec_upd_tmstmp = datetime.utcnow()
+
+    db.session.commit()
+
+    return redirect(url_for("dashboard"))
+
+@app.route("/contacts/delete/<string:ctc_id>", methods=["POST"])
+@login_required
+def delete_contact(ctc_id):
+    contact = Contact.query.get_or_404(ctc_id)
+
+    contact.dlt_flg = '1'
+    contact.rec_upd_usr_id = session.get("user_id")
+    contact.rec_upd_tmstmp = datetime.utcnow()
+
+    db.session.commit()
+
+    return redirect(url_for("dashboard"))
+
+from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
+
+@app.route("/change_password", methods=["GET", "POST"])
+@login_required
+def change_password():
+
+    if request.method == "POST":
+        current_pw = request.form["current_password"]
+        new_pw = request.form["new_password"]
+        confirm_pw = request.form["confirm_password"]
+
+        # ユーザ取得
+        user = UserAuth.query.filter_by(
+            usr_id=session.get("user_id"),
+            dlt_flg='0'
+        ).first()
+
+        if not user:
+            flash("ユーザーが存在しません")
+            return redirect(url_for("change_password"))
+
+        # 現在パスワードチェック
+        if not check_password_hash(user.password_hash, current_pw):
+            flash("現在のパスワードが違います")
+            return redirect(url_for("change_password"))
+
+        # 一致チェック
+        if new_pw != confirm_pw:
+            flash("新しいパスワードが一致しません")
+            return redirect(url_for("change_password"))
+
+        # 🔥 ① パスワード強度チェック
+        if len(new_pw) < 8:
+            flash("パスワードは8文字以上にしてください")
+            return redirect(url_for("change_password"))
+
+        if new_pw.isdigit() or new_pw.isalpha():
+            flash("英数字を組み合わせてください")
+            return redirect(url_for("change_password"))
+
+        # 更新
+        user.password_hash = generate_password_hash(new_pw)
+        user.rec_upd_usr_id = session.get("user_id")
+        user.rec_upd_tmstmp = datetime.utcnow()
+
+        db.session.commit()
+
+        # 🔥 ② 強制ログアウト
+        session.clear()
+
+        flash("パスワードを変更しました。再ログインしてください。")
+        return redirect(url_for("login"))
+
+    return render_template("change_password.html")
 
 @app.route("/articles/add", methods=["GET", "POST"])
 @login_required

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="page-title">ダッシュボード</h1>
+
+<div class="dashboard">
+
+  <!-- 作品 -->
+  <div class="column">
+    <h2>作品一覧</h2>
+
+    {% for work in works %}
+      <div class="item">
+        {{ work.wrk_nm }}
+
+        <div>
+          <a href="/works/edit/{{ work.wrk_id }}">編集</a>
+
+          <form method="POST" action="/works/delete/{{ work.wrk_id }}" style="display:inline;">
+            <button type="submit" onclick="return confirm('この作品を削除しますか？')">削除</button>
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="pagination">
+      {% if work_pagination.has_prev %}
+        <a href="{{ url_for('dashboard',
+            work_page=work_pagination.prev_num,
+            article_page=article_pagination.page,
+            contact_page=contact_pagination.page) }}">前へ</a>
+      {% endif %}
+
+      {% if work_pagination.has_next %}
+        <a href="{{ url_for('dashboard',
+            work_page=work_pagination.next_num,
+            article_page=article_pagination.page,
+            contact_page=contact_pagination.page) }}">次へ</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- 記事 -->
+  <div class="column">
+    <h2>記事一覧</h2>
+
+    {% for article in articles %}
+      <div class="item">
+        {{ article.blg_nm }}
+
+        <div>
+          <a href="/articles/edit/{{ article.blg_id }}">編集</a>
+
+          <form method="POST" action="/articles/delete/{{ article.blg_id }}" style="display:inline;">
+            <button type="submit" onclick="return confirm('この作品を削除しますか？')">削除</button>
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="pagination">
+      {% if article_pagination.has_prev %}
+        <a href="{{ url_for('dashboard',
+            work_page=work_pagination.page,
+            article_page=article_pagination.prev_num,
+            contact_page=contact_pagination.page) }}">前へ</a>
+      {% endif %}
+
+      {% if article_pagination.has_next %}
+        <a href="{{ url_for('dashboard',
+            work_page=work_pagination.page,
+            article_page=article_pagination.next_num,
+            contact_page=contact_pagination.page) }}">次へ</a>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+<!-- お問い合わせ -->
+<div class="contact-section">
+  <h2>お問い合わせ一覧</h2>
+
+  {% for contact in contacts %}
+    <div class="item">
+      {{ contact.ctc_nm }} - {{ contact.ctc_ml }}
+
+      <form method="POST" action="/contacts/delete/{{ contact.ctc_id }}" style="display:inline;">
+        <button type="submit" onclick="return confirm('この作品を削除しますか？')">削除</button>
+      </form>
+    </div>
+  {% endfor %}
+
+  <div class="pagination">
+    {% if contact_pagination.has_prev %}
+      <a href="{{ url_for('dashboard',
+          work_page=work_pagination.page,
+          article_page=article_pagination.page,
+          contact_page=contact_pagination.prev_num) }}">前へ</a>
+    {% endif %}
+
+    {% if contact_pagination.has_next %}
+      <a href="{{ url_for('dashboard',
+          work_page=work_pagination.page,
+          article_page=article_pagination.page,
+          contact_page=contact_pagination.next_num) }}">次へ</a>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

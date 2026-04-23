@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="page-title">お問い合わせ</h1>
+
+<form method="POST" onsubmit="return confirmSubmit()">
+
+  <label>お名前</label><br>
+  <input type="text" name="ctc_nm" required><br><br>
+
+  <label>フリガナ</label><br>
+  <input type="text" name="ctc_nm_kn"><br><br>
+
+  <label>メールアドレス</label><br>
+  <input type="email" name="ctc_ml"><br><br>
+
+  <label>電話番号</label><br>
+  <input type="text" name="ctc_hn"><br><br>
+
+  <label>お問い合わせ内容</label><br>
+  <textarea name="ctc_dtl" required></textarea><br><br>
+
+  <button type="submit">送信</button>
+
+</form>
+
+{% endblock %}
+
+<script>
+function confirmSubmit() {
+  return confirm("この内容で送信しますか？");
+}
+</script>
