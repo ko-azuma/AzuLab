@@ -1,0 +1,39 @@
+{% extends "header.html" %}
+{% block content %}
+
+<h1 class="page-title">記事一覧</h1>
+
+<div class="card-grid">
+
+  {% for article in articles %}
+    <div class="card">
+
+      <a href="{{ url_for('article_detail', blg_id=article.blg_id) }}">
+
+        <img src="{{ url_for('static', filename=article.blg_img_pt or 'noimage.png') }}" class="thumb">
+
+        <h2>{{ article.blg_nm }}</h2>
+      </a>
+
+      <p>{{ article.blg_dtl[:50] }}...</p>
+
+    </div>
+  {% endfor %}
+
+</div>
+
+<div class="pagination">
+
+  {% if pagination.has_prev %}
+    <a href="{{ url_for('articles', page=pagination.prev_num) }}">← 前へ</a>
+  {% endif %}
+
+  <span>ページ {{ pagination.page }}</span>
+
+  {% if pagination.has_next %}
+    <a href="{{ url_for('articles', page=pagination.next_num) }}">次へ →</a>
+  {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,44 +1,45 @@
-{% extends "base.html" %}
-
+{% extends "header.html" %}
 {% block content %}
 
 <h1 class="page-title">作品一覧</h1>
 
-<div class="works-list">
+<div class="card-grid">
+
   {% for work in works %}
     <div class="card">
-      <a href="/works/{{ work.wrk_id }}">
-        <h2>{{ work.wrk_nm }}</h2>
+
+      <a href="{{ url_for('work_detail', wrk_id=work.wrk_id) }}">
+
+        <!-- 画像 -->
+        <img src="{{ url_for('static', filename=work.wrk_img_pt or 'noimage.png') }}" class="thumb">
+
+        <!-- タイトル -->
+        <h2 class="card-title">{{ work.wrk_nm }}</h2>
+
       </a>
 
-      {% if work.wrk_img_pt %}
-        <img src="{{ url_for('static', filename=work.wrk_img_pt) }}">
-      {% endif %}
+      <!-- 詳細（50文字省略） -->
+      <p class="card-text">
+        {{ work.wrk_dtl[:50] }}{% if work.wrk_dtl|length > 50 %}...{% endif %}
+      </p>
 
-      <p>{{ work.wrk_dtl }}</p>
     </div>
   {% endfor %}
+
 </div>
 
 <!-- ページング -->
 <div class="pagination">
 
   {% if pagination.has_prev %}
-    <a href="{{ url_for('works', page=pagination.prev_num) }}">
-      ← 前へ
-    </a>
+    <a href="{{ url_for('works', page=pagination.prev_num) }}" class="page-btn">← 前へ</a>
   {% endif %}
 
-  <span>ページ {{ pagination.page }}</span>
+  <span class="page-info">ページ {{ pagination.page }} / {{ pagination.pages }}</span>
 
   {% if pagination.has_next %}
-    <a href="{{ url_for('works', page=pagination.next_num) }}">
-      次へ →
-    </a>
+    <a href="{{ url_for('works', page=pagination.next_num) }}" class="page-btn">次へ →</a>
   {% endif %}
-{% if work.wrk_img_pt %}
-  <img src="{{ url_for('static', filename=work.wrk_img_pt) }}">
-{% endif %}
 
 </div>
 

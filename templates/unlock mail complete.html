@@ -1,0 +1,21 @@
+{% extends "header.html" %}
+{% block content %}
+
+<div class="message-container">
+
+  <h1>送信完了</h1>
+
+  <p>
+    ロック解除用のメールを送信しました。<br>
+    メールをご確認ください。
+  </p>
+
+  <p class="note">
+    ※登録されているメールアドレスの場合に送信されます
+  </p>
+
+  <a href="{{ url_for('login') }}" class="btn">ログイン画面へ</a>
+
+</div>
+
+{% endblock %}

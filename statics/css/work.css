@@ -1,35 +1,51 @@
 .page-title {
   text-align: center;
-  font-size: 36px;
-  margin: 40px 0;
+  margin-bottom: 30px;
 }
 
-.works-list {
+/* グリッド */
+.card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
+/* カード */
 .card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.card img {
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.2s;
+}
+
+/* サムネ */
+.thumb {
   width: 100%;
-  height: auto;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
+/* 詳細 */
+.detail-container {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.detail-img {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px 0;
+}
+
+/* ページング */
 .pagination {
   text-align: center;
-  margin: 30px 0;
-}
-
-.pagination a {
-  margin: 0 10px;
-}
-.card a {
-  text-decoration: none;
-  color: black;
+  margin-top: 20px;
 }

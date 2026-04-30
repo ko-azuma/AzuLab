@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="profile-container">
+
+  <!-- タイトル -->
+  <h1 class="page-title">プロフィール</h1>
+
+  <!-- プロフィールカード -->
+  <div class="profile-card">
+
+    <!-- 画像 -->
+    <img src="{{ url_for('static', filename='profile.jpg') }}" class="profile-img">
+
+    <!-- 名前 -->
+    <h2>AzuLab</h2>
+
+    <!-- 自己紹介 -->
+    <p class="profile-text">
+      Webアプリ開発を中心に活動しています。<br>
+      「あなたの理想を形にする」をテーマに制作しています。
+    </p>
+
+    <!-- SNS -->
+    <div class="profile-links">
+      <a href="#">Twitter</a>
+      <a href="#">GitHub</a>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

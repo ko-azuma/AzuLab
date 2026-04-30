@@ -174,9 +174,22 @@ def login_required(f):
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route("/")
+def index():
+
+    works = Work.query.filter_by(dlt_flg='0') \
+        .order_by(Work.rec_crtn_tmstmp.desc()) \
+        .limit(5).all()
+
+    articles = Article.query.filter_by(dlt_flg='0') \
+        .order_by(Article.rec_crtn_tmstmp.desc()) \
+        .limit(5).all()
+
+    return render_template("index.html", works=works, articles=articles)
+
 @app.route("/profile")
 def profile():
-    return "<h1>プロフィール</h1>"
+    return render_template("profile.html")
 
 @app.route("/works")
 def works():
@@ -233,9 +246,250 @@ def contact():
 
     return render_template("contact.html")
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    return "<h1>ログイン</h1>"
+
+    if request.method == "POST":
+        usr_id = request.form["usr_id"]
+        password = request.form["password"]
+
+        # 認証テーブル（USR020）
+        user_auth = UserAuth.query.filter_by(
+            usr_id=usr_id,
+            dlt_flg='0'
+        ).first()
+
+        if not user_auth:
+            flash("ユーザーが存在しません")
+            return redirect(url_for("login"))
+
+        # ロックチェック
+        if user_auth.account_lock_flg == '1':
+            flash("アカウントがロックされています")
+            return redirect(url_for("login"))
+
+        # パスワードチェック
+        if not check_password_hash(user_auth.password_hash, password):
+            user_auth.login_fail_count += 1
+
+            # 5回失敗でロック
+            if user_auth.login_fail_count >= 5:
+                user_auth.account_lock_flg = '1'
+                flash("ログイン失敗が多いためロックしました")
+
+            db.session.commit()
+
+            flash("パスワードが違います")
+            return redirect(url_for("login"))
+
+        # 成功時
+        user_auth.login_fail_count = 0
+        user_auth.last_login_tmstmp = datetime.utcnow()
+
+        db.session.commit()
+
+        # セッション保存
+        session["user_id"] = usr_id
+
+        return redirect(url_for("dashboard"))
+
+    return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("index"))
+
+import uuid
+from datetime import datetime, timedelta
+import hashlib
+
+@app.route("/password_reset_request", methods=["GET", "POST"])
+def password_reset_request():
+
+    if request.method == "POST":
+        usr_id = request.form["usr_id"]
+
+        # ユーザ存在確認
+        user = UserAuth.query.filter_by(usr_id=usr_id, dlt_flg='0').first()
+
+        if not user:
+            flash("ユーザーが存在しません")
+            return redirect(url_for("password_reset_request"))
+
+        # トークン生成
+        raw_token = str(uuid.uuid4())
+        token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
+
+        token = PasswordResetToken(
+            token_id=str(uuid.uuid4()),
+            usr_id=usr_id,
+            reset_token_hash=token_hash,
+            token_type=0,  # パスワードリセット
+            expires_at=datetime.utcnow() + timedelta(hours=1),
+            status=0,
+            rec_crtn_tmstmp=datetime.utcnow()
+        )
+
+        db.session.add(token)
+        db.session.commit()
+
+        # 本来はここでメール送信
+        print(f"リセットリンク: /reset_password/{raw_token}")
+
+        return redirect(url_for("reset_request_done"))
+
+    return render_template("password_reset_request.html")
+
+@app.route("/reset_request_done")
+def reset_request_done():
+    return render_template("reset_request_done.html")
+
+@app.route("/reset_password/<token>", methods=["GET", "POST"])
+def reset_password(token):
+
+    import hashlib
+    from datetime import datetime
+
+    token_hash = hashlib.sha256(token.encode()).hexdigest()
+
+    token_data = PasswordResetToken.query.filter_by(
+        reset_token_hash=token_hash,
+        token_type=0,
+        status=0
+    ).first()
+
+    if not token_data:
+        flash("無効なリンクです")
+        return redirect(url_for("login"))
+
+    if token_data.expires_at < datetime.utcnow():
+        flash("リンクの有効期限が切れています")
+        return redirect(url_for("login"))
+
+    user = UserAuth.query.filter_by(
+        usr_id=token_data.usr_id,
+        dlt_flg='0'
+    ).first()
+
+    if not user:
+        flash("ユーザーが存在しません")
+        return redirect(url_for("login"))
+
+    if request.method == "POST":
+        new_pw = request.form["new_password"]
+        confirm_pw = request.form["confirm_password"]
+
+        if new_pw != confirm_pw:
+            flash("パスワードが一致しません")
+            return redirect(request.url)
+
+        if len(new_pw) < 8:
+            flash("8文字以上にしてください")
+            return redirect(request.url)
+
+        if new_pw.isdigit() or new_pw.isalpha():
+            flash("英数字を組み合わせてください")
+            return redirect(request.url)
+
+        # 🔥 更新
+        user.password_hash = generate_password_hash(new_pw)
+        user.login_fail_count = 0
+        user.account_lock_flg = '0'
+
+        token_data.status = 1
+
+        db.session.commit()
+
+        flash("パスワードを再設定しました。ログインしてください。")
+        return redirect(url_for("login"))
+
+    return render_template("reset_password.html")
+
+@app.route("/unlock_request", methods=["GET", "POST"])
+def unlock_request():
+
+    if request.method == "POST":
+        usr_id = request.form["usr_id"]
+
+        user = UserAuth.query.filter_by(usr_id=usr_id, dlt_flg='0').first()
+
+        if not user:
+            flash("ユーザーが存在しません")
+            return redirect(url_for("unlock_request"))
+
+        raw_token = str(uuid.uuid4())
+        token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
+
+        token = PasswordResetToken(
+            token_id=str(uuid.uuid4()),
+            usr_id=usr_id,
+            reset_token_hash=token_hash,
+            token_type=1,  # ロック解除
+            expires_at=datetime.utcnow() + timedelta(hours=1),
+            status=0,
+            rec_crtn_tmstmp=datetime.utcnow()
+        )
+
+        db.session.add(token)
+        db.session.commit()
+
+        print(f"ロック解除リンク: /unlock_account/{raw_token}")
+
+        return redirect(url_for("unlock_request_done"))
+    return render_template("unlock_request.html")
+
+@app.route("/unlock_request_done")
+def unlock_request_done():
+    return render_template("unlock_request_done.html")
+
+@app.route("/unlock_account/<token>")
+def unlock_account(token):
+
+    import hashlib
+    from datetime import datetime
+
+    # トークンをハッシュ化（DBと照合）
+    token_hash = hashlib.sha256(token.encode()).hexdigest()
+
+    token_data = PasswordResetToken.query.filter_by(
+        reset_token_hash=token_hash,
+        token_type=1,   # ロック解除
+        status=0
+    ).first()
+
+    # トークン存在チェック
+    if not token_data:
+        flash("無効なリンクです")
+        return redirect(url_for("login"))
+
+    # 有効期限チェック
+    if token_data.expires_at < datetime.utcnow():
+        flash("リンクの有効期限が切れています")
+        return redirect(url_for("login"))
+
+    # ユーザ取得
+    user = UserAuth.query.filter_by(
+        usr_id=token_data.usr_id,
+        dlt_flg='0'
+    ).first()
+
+    if not user:
+        flash("ユーザーが存在しません")
+        return redirect(url_for("login"))
+
+    # 🔥 ロック解除
+    user.account_lock_flg = '0'
+    user.login_fail_count = 0
+
+    # トークン使用済みにする
+    token_data.status = 1
+
+    db.session.commit()
+
+    flash("アカウントロックを解除しました。ログインしてください。")
+    return redirect(url_for("login"))
+
 
 @app.route("/dashboard")
 @login_required

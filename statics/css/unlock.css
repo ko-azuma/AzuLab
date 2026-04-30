@@ -1,0 +1,24 @@
+.message-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.message-container h1 {
+  margin-bottom: 20px;
+}
+
+.note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}

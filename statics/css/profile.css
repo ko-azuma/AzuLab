@@ -1,0 +1,32 @@
+.profile-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.profile-card {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-text {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.profile-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+}
