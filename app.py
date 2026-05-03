@@ -26,11 +26,42 @@ logging.basicConfig(
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 #　モデル
 from datetime import datetime
+import os
+import uuid
+from werkzeug.utils import secure_filename
 
+def save_image(file):
+    if not file or file.filename == "":
+        return None
+
+    if not allowed_file(file.filename):
+        return None
+
+    filename = str(uuid.uuid4()) + "_" + secure_filename(file.filename)
+    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+
+    file.save(filepath)
+
+    return f"uploads/{filename}"
+
+
+def delete_image(image_path):
+    if not image_path:
+        return
+
+    filename = os.path.basename(image_path)
+    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+
+    if os.path.exists(filepath):
+        os.remove(filepath)
+
+from flask_mail import Mail,Message
+
+mail = Mail(app)
 class User(db.Model):
     __tablename__ = "usr010"
 
-    usr_id = db.Column(db.String(10), primary_key=True)
+    usr_id = db.Column(db.String(255), primary_key=True)
     usr_nm = db.Column(db.String(32), nullable=False)
     dlt_flg = db.Column(db.String(1), default='0')
 
@@ -45,7 +76,7 @@ class User(db.Model):
 class UserAuth(db.Model):
     __tablename__ = "usr020"
 
-    usr_id = db.Column(db.String(10), db.ForeignKey('usr010.usr_id'), primary_key=True)
+    usr_id = db.Column(db.String(255), db.ForeignKey('usr010.usr_id'), primary_key=True)
     password_hash = db.Column(db.String(255), nullable=False)
 
     login_fail_count = db.Column(db.Integer, default=0)
@@ -86,12 +117,12 @@ class Article(db.Model):
 class Work(db.Model):
     __tablename__ = "wrk010"
 
-    blg_id = db.Column(db.String(10), primary_key=True)
-    blg_nm = db.Column(db.String(255), nullable=False)
-    blg_img_pt = db.Column(db.String(200))
-    blg_ctg = db.Column(db.String(20))
-    blg_dtl = db.Column(db.String(1000))
-    blg_url = db.Column(db.String(200))
+    wrk_id = db.Column(db.String(10), primary_key=True)
+    wrk_nm = db.Column(db.String(255), nullable=False)
+    wrk_img_pt = db.Column(db.String(200))
+    wrk_ctg = db.Column(db.String(20))
+    wrk_dtl = db.Column(db.String(1000))
+    wrk_url = db.Column(db.String(200))
 
     dlt_flg = db.Column(db.String(1), default='0')
 
@@ -102,7 +133,6 @@ class Work(db.Model):
     rec_upd_prg_id = db.Column(db.String(50))
     rec_upd_usr_id = db.Column(db.String(10))
     rec_upd_tmstmp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-
 class Contact(db.Model):
     __tablename__ = "ctc010"
 
@@ -131,7 +161,7 @@ class PasswordResetToken(db.Model):
     token_id = db.Column(db.String(36), primary_key=True)
 
     usr_id = db.Column(
-        db.String(10),
+        db.String(255),
         db.ForeignKey('usr010.usr_id'),
         nullable=False
     )
@@ -151,14 +181,6 @@ class PasswordResetToken(db.Model):
         db.DateTime,
         default=datetime.utcnow
     )
-# ログフォーマット
-logging.basicConfig(
-    filename='logs/app.log',
-    level=logging.INFO,
-    format='%(asctime)s %(levelname)s: %(message)s'
-)
-logging.info("トップページ表示")
-logging.warning("ログイン失敗")
 logging.error("DB接続エラー")
 
 from functools import wraps
@@ -170,12 +192,27 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+def send_mail(to, subject, body):
+    msg = Message(
+        subject,
+        sender=app.config['MAIL_USERNAME'],
+        recipients=[to]
+    )
+    msg.body = body
+    try:
+        mail.send(msg)
+    except Exception as e:
+        logging.error(f"メール送信失敗: {e}")
+
+
 # ルート
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route("/")
 def index():
+    logging.info("トップページアクセス")
 
     works = Work.query.filter_by(dlt_flg='0') \
         .order_by(Work.rec_crtn_tmstmp.desc()) \
@@ -197,7 +234,7 @@ def works():
 
     pagination = Work.query.filter_by(dlt_flg='0') \
         .order_by(Work.rec_crtn_tmstmp.desc()) \
-        .paginate(page=page, per_page=20)
+        .paginate(page=page, per_page=20, error_out=False)
 
     works = pagination.items
 
@@ -214,7 +251,22 @@ def work_detail(wrk_id):
 
 @app.route("/articles")
 def articles():
-    return "<h1>記事一覧</h1>"
+    page = request.args.get("page", 1, type=int)
+
+    pagination = Article.query.filter_by(dlt_flg='0') \
+        .order_by(Article.rec_crtn_tmstmp.desc()) \
+        .paginate(page=page, per_page=20, error_out=False)
+
+    return render_template(
+        "articles.html",
+        articles=pagination.items,
+        pagination=pagination
+    )
+
+@app.route("/articles/<string:blg_id>")
+def article_detail(blg_id):
+    article = Article.query.get_or_404(blg_id)
+    return render_template("article_detail.html", article=article)
 
 import uuid
 from datetime import datetime
@@ -242,54 +294,51 @@ def contact():
         db.session.add(contact)
         db.session.commit()
 
-        return redirect(url_for("top"))
+        return redirect(url_for("index"))
 
     return render_template("contact.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-
     if request.method == "POST":
         usr_id = request.form["usr_id"]
         password = request.form["password"]
 
-        # 認証テーブル（USR020）
         user_auth = UserAuth.query.filter_by(
             usr_id=usr_id,
             dlt_flg='0'
         ).first()
 
-        if not user_auth:
-            flash("ユーザーが存在しません")
+        # ダミーでタイミング揃える
+        if user_auth:
+            is_valid = check_password_hash(user_auth.password_hash, password)
+        else:
+            check_password_hash(generate_password_hash("dummy"), password)
+            is_valid = False
+
+        # ロックチェック（存在しても隠す）
+        if user_auth and user_auth.account_lock_flg == '1':
+            flash("ユーザーIDまたはパスワードが違います")
             return redirect(url_for("login"))
 
-        # ロックチェック
-        if user_auth.account_lock_flg == '1':
-            flash("アカウントがロックされています")
+        if not is_valid:
+            if user_auth:
+                user_auth.login_fail_count += 1
+
+                if user_auth.login_fail_count >= 5:
+                    user_auth.account_lock_flg = '1'
+
+                db.session.commit()
+            logging.warning(f"ログイン失敗 usr_id={usr_id}")
+            flash("ユーザーIDまたはパスワードが違います")
             return redirect(url_for("login"))
 
-        # パスワードチェック
-        if not check_password_hash(user_auth.password_hash, password):
-            user_auth.login_fail_count += 1
-
-            # 5回失敗でロック
-            if user_auth.login_fail_count >= 5:
-                user_auth.account_lock_flg = '1'
-                flash("ログイン失敗が多いためロックしました")
-
-            db.session.commit()
-
-            flash("パスワードが違います")
-            return redirect(url_for("login"))
-
-        # 成功時
+        # 成功
         user_auth.login_fail_count = 0
         user_auth.last_login_tmstmp = datetime.utcnow()
 
-        db.session.commit()
-
-        # セッション保存
         session["user_id"] = usr_id
+        db.session.commit()
 
         return redirect(url_for("dashboard"))
 
@@ -306,38 +355,41 @@ import hashlib
 
 @app.route("/password_reset_request", methods=["GET", "POST"])
 def password_reset_request():
-
     if request.method == "POST":
         usr_id = request.form["usr_id"]
 
-        # ユーザ存在確認
-        user = UserAuth.query.filter_by(usr_id=usr_id, dlt_flg='0').first()
-
-        if not user:
-            flash("ユーザーが存在しません")
-            return redirect(url_for("password_reset_request"))
-
-        # トークン生成
-        raw_token = str(uuid.uuid4())
-        token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
-
-        token = PasswordResetToken(
-            token_id=str(uuid.uuid4()),
+        user = UserAuth.query.filter_by(
             usr_id=usr_id,
-            reset_token_hash=token_hash,
-            token_type=0,  # パスワードリセット
-            expires_at=datetime.utcnow() + timedelta(hours=1),
-            status=0,
-            rec_crtn_tmstmp=datetime.utcnow()
-        )
+            dlt_flg='0'
+        ).first()
 
-        db.session.add(token)
-        db.session.commit()
+        if user:
+            raw_token = str(uuid.uuid4())
+            token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
 
-        # 本来はここでメール送信
-        print(f"リセットリンク: /reset_password/{raw_token}")
+            token = PasswordResetToken(
+                token_id=str(uuid.uuid4()),
+                usr_id=usr_id,
+                reset_token_hash=token_hash,
+                token_type=0,
+                expires_at=datetime.utcnow() + timedelta(hours=1),
+                status=0
+            )
 
-        return redirect(url_for("reset_request_done"))
+            db.session.add(token)
+            db.session.commit()
+
+            reset_link = f"http://localhost:5000/reset_password/{raw_token}"
+
+            send_mail(
+                usr_id,
+                "パスワードリセット",
+                f"以下のリンクから再設定してください\n{reset_link}"
+            )
+
+        # 🔥 常に同じレスポンス
+        flash("メールを送信しました（該当するアカウントが存在する場合）")
+        return redirect(url_for("login"))
 
     return render_template("password_reset_request.html")
 
@@ -408,35 +460,42 @@ def reset_password(token):
 
 @app.route("/unlock_request", methods=["GET", "POST"])
 def unlock_request():
-
     if request.method == "POST":
         usr_id = request.form["usr_id"]
 
-        user = UserAuth.query.filter_by(usr_id=usr_id, dlt_flg='0').first()
-
-        if not user:
-            flash("ユーザーが存在しません")
-            return redirect(url_for("unlock_request"))
-
-        raw_token = str(uuid.uuid4())
-        token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
-
-        token = PasswordResetToken(
-            token_id=str(uuid.uuid4()),
+        user = UserAuth.query.filter_by(
             usr_id=usr_id,
-            reset_token_hash=token_hash,
-            token_type=1,  # ロック解除
-            expires_at=datetime.utcnow() + timedelta(hours=1),
-            status=0,
-            rec_crtn_tmstmp=datetime.utcnow()
-        )
+            dlt_flg='0'
+        ).first()
 
-        db.session.add(token)
-        db.session.commit()
+        if user:
+            raw_token = str(uuid.uuid4())
+            token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
 
-        print(f"ロック解除リンク: /unlock_account/{raw_token}")
+            token = PasswordResetToken(
+                token_id=str(uuid.uuid4()),
+                usr_id=usr_id,
+                reset_token_hash=token_hash,
+                token_type=1,
+                expires_at=datetime.utcnow() + timedelta(hours=1),
+                status=0
+            )
 
-        return redirect(url_for("unlock_request_done"))
+            db.session.add(token)
+            db.session.commit()
+
+            unlock_link = f"http://localhost:5000/unlock_account/{raw_token}"
+
+            send_mail(
+                usr_id,
+                "アカウントロック解除",
+                f"以下のリンクから解除してください\n{unlock_link}"
+            )
+
+        # 🔥 絶対に同じ挙動
+        flash("メールを送信しました（該当するアカウントが存在する場合）")
+        return redirect(url_for("login"))
+
     return render_template("unlock_request.html")
 
 @app.route("/unlock_request_done")
@@ -474,9 +533,6 @@ def unlock_account(token):
         dlt_flg='0'
     ).first()
 
-    if not user:
-        flash("ユーザーが存在しません")
-        return redirect(url_for("login"))
 
     # 🔥 ロック解除
     user.account_lock_flg = '0'
@@ -523,31 +579,6 @@ def dashboard():
         contact_pagination=contact_pagination
     )
 
-@app.route("/works/delete/<string:wrk_id>", methods=["POST"])
-@login_required
-def delete_work(wrk_id):
-    work = Work.query.get_or_404(wrk_id)
-
-    work.dlt_flg = '1'
-    work.rec_upd_usr_id = session.get("user_id")
-    work.rec_upd_tmstmp = datetime.utcnow()
-
-    db.session.commit()
-
-    return redirect(url_for("dashboard"))
-
-@app.route("/articles/delete/<string:blg_id>", methods=["POST"])
-@login_required
-def delete_article(blg_id):
-    article = Article.query.get_or_404(blg_id)
-
-    article.dlt_flg = '1'
-    article.rec_upd_usr_id = session.get("user_id")
-    article.rec_upd_tmstmp = datetime.utcnow()
-
-    db.session.commit()
-
-    return redirect(url_for("dashboard"))
 
 @app.route("/contacts/delete/<string:ctc_id>", methods=["POST"])
 @login_required
@@ -624,19 +655,12 @@ def add_article():
 
     if request.method == "POST":
 
-        file = request.files.get("image")
-        filename = None
-
-        if file and allowed_file(file.filename):
-            filename = str(uuid.uuid4()) + "_" + secure_filename(file.filename)
-            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-
-        blg_id = str(uuid.uuid4())[:10]
+        image_path = save_image(request.files.get("image"))
 
         article = Article(
-            blg_id=blg_id,
+            blg_id=str(uuid.uuid4())[:10],
             blg_nm=request.form["blg_nm"],
-            blg_img_pt=f"uploads/{filename}" if filename else None,
+            blg_img_pt=image_path,
             blg_ctg=request.form["blg_ctg"],
             blg_dtl=request.form["blg_dtl"],
             blg_url=request.form["blg_url"],
@@ -663,10 +687,12 @@ def edit_article(blg_id):
 
         file = request.files.get("image")
 
-        if file and allowed_file(file.filename):
-            filename = str(uuid.uuid4()) + "_" + secure_filename(file.filename)
-            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-            article.blg_img_pt = f"uploads/{filename}"
+        if file and file.filename:
+            # 古い画像削除
+            delete_image(article.blg_img_pt)
+
+            # 新しい画像保存
+            article.blg_img_pt = save_image(file)
 
         article.blg_nm = request.form["blg_nm"]
         article.blg_ctg = request.form["blg_ctg"]
@@ -682,53 +708,37 @@ def edit_article(blg_id):
 
     return render_template("article_edit.html", article=article)
 
+@app.route("/articles/delete/<string:blg_id>", methods=["POST"])
+@login_required
+def delete_article(blg_id):
+    article = Article.query.get_or_404(blg_id)
+
+    # 画像削除
+    delete_image(article.blg_img_pt)
+
+    article.dlt_flg = '1'
+    article.rec_upd_usr_id = session.get("user_id")
+    article.rec_upd_tmstmp = datetime.utcnow()
+
+    db.session.commit()
+
+    return redirect(url_for("dashboard"))
+
 import uuid
 from datetime import datetime
 
-@app.route("/works/add", methods=["GET", "POST"])
-def add_work():
-    if "user_id" not in session:
-        return redirect("/login")
-    if request.method == "POST":
-        wrk_id = str(uuid.uuid4())[:10]  # 簡易ID生成
-
-        work = Work(
-            wrk_id=wrk_id,
-            wrk_nm=request.form["wrk_nm"],
-            wrk_ctg=request.form["wrk_ctg"],
-            wrk_dtl=request.form["wrk_dtl"],
-            wrk_url=request.form["wrk_url"],
-            dlt_flg='0',
-            rec_crtn_prg_id="ADD_WORK",
-            rec_crtn_usr_id=session.get("user_id", "SYSTEM"),
-            rec_crtn_tmstmp=datetime.utcnow()
-        )
-
-        db.session.add(work)
-        db.session.commit()
-
-        return redirect(url_for("works"))
-
-    return render_template("work_add.html")
 
 @app.route("/works/add", methods=["GET", "POST"])
 @login_required
 def add_work():
     if request.method == "POST":
 
-        file = request.files.get("image")
-        filename = None
-
-        if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-
-        wrk_id = str(uuid.uuid4())[:10]
+        image_path = save_image(request.files.get("image"))
 
         work = Work(
-            wrk_id=wrk_id,
+            wrk_id=str(uuid.uuid4())[:10],
             wrk_nm=request.form["wrk_nm"],
-            wrk_img_pt=f"uploads/{filename}" if filename else None,
+            wrk_img_pt=image_path,
             wrk_ctg=request.form["wrk_ctg"],
             wrk_dtl=request.form["wrk_dtl"],
             wrk_url=request.form["wrk_url"],
@@ -753,15 +763,15 @@ def edit_work(wrk_id):
 
     if request.method == "POST":
 
-        # 画像処理
         file = request.files.get("image")
 
-        if file and allowed_file(file.filename):
-            filename = str(uuid.uuid4()) + "_" + secure_filename(file.filename)
-            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-            work.wrk_img_pt = f"uploads/{filename}"
+        if file and file.filename:
+            # 古い画像削除
+            delete_image(work.wrk_img_pt)
 
-        # テキスト更新
+            # 新しい画像保存
+            work.wrk_img_pt = save_image(file)
+
         work.wrk_nm = request.form["wrk_nm"]
         work.wrk_ctg = request.form["wrk_ctg"]
         work.wrk_dtl = request.form["wrk_dtl"]
@@ -772,6 +782,23 @@ def edit_work(wrk_id):
         return redirect(url_for("works"))
 
     return render_template("work_edit.html", work=work)
+
+@app.route("/works/delete/<string:wrk_id>", methods=["POST"])
+@login_required
+def delete_work(wrk_id):
+    work = Work.query.get_or_404(wrk_id)
+
+    # 画像削除
+    delete_image(work.wrk_img_pt)
+
+    work.dlt_flg = '1'
+    work.rec_upd_usr_id = session.get("user_id")
+    work.rec_upd_tmstmp = datetime.utcnow()
+
+    db.session.commit()
+
+    return redirect(url_for("dashboard"))
+
 # 初期データ作成
 def create_initial_user():
     from werkzeug.security import generate_password_hash
