@@ -1,3 +1,14 @@
+/* ===== 共通 ===== */
+body {
+  margin: 0;
+  font-family: "MS Mincho", serif;
+}
+
+.content {
+  padding: 20px;
+}
+
+/* ===== フォーム ===== */
 form {
   width: 400px;
   margin: 0 auto;
@@ -9,6 +20,7 @@ input, textarea {
   margin-top: 5px;
 }
 
+/* ===== ボタン ===== */
 button {
   padding: 10px 20px;
   background-color: #333;
@@ -17,11 +29,4 @@ button {
   cursor: pointer;
 }
 
-.add-btn {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-}
+/* 削

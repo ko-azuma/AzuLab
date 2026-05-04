@@ -1,15 +1,17 @@
+import os
+
 class Config:
-    SECRET_KEY = 'azde6789hul'  # セッションに必須！
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgre@localhost/azulabdb'
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
+    MAIL_USERNAME = os.getenv("MAIL_USERNAME")
+    MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")
+
     UPLOAD_FOLDER = 'static/uploads'
-    MAX_CONTENT_LENGTH = 2 * 1024 * 1024  # 最大2MB
+    MAX_CONTENT_LENGTH = 2 * 1024 * 1024
     DEBUG = False
-    # 🔥 メール設定
+
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = 'wsxcerty5@gmail.com'
-    MAIL_PASSWORD = 'gphhkvbqndmeinfd'  # ←重要
-
 class DevelopmentConfig(Config):
     DEBUG = True
