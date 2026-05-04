@@ -1,0 +1,157 @@
+2026-05-04 23:50:17,631 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-04 23:50:18,139 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 23:50:18,140 INFO: [33mPress CTRL+C to quit[0m
+2026-05-04 23:50:18,142 INFO:  * Restarting with stat
+2026-05-04 23:50:19,175 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-04 23:50:19,463 WARNING:  * Debugger is active!
+2026-05-04 23:50:19,466 INFO:  * Debugger PIN: 815-551-975
+2026-05-04 23:50:34,575 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-04 23:50:34,762 INFO: 127.0.0.1 - - [04/May/2026 23:50:34] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-05-04 23:50:34,976 INFO: 127.0.0.1 - - [04/May/2026 23:50:34] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-04 23:50:35,025 INFO: 127.0.0.1 - - [04/May/2026 23:50:35] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-04 23:50:35,128 INFO: 127.0.0.1 - - [04/May/2026 23:50:35] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=Vmi4PhmAh7MRXT5vI2ui HTTP/1.1" 200 -
+2026-05-04 23:50:35,246 INFO: 127.0.0.1 - - [04/May/2026 23:50:35] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-04 23:54:38,828 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-04 23:54:39,104 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 23:54:39,105 INFO: [33mPress CTRL+C to quit[0m
+2026-05-04 23:54:39,107 INFO:  * Restarting with stat
+2026-05-04 23:54:40,023 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-04 23:54:40,276 WARNING:  * Debugger is active!
+2026-05-04 23:54:40,279 INFO:  * Debugger PIN: 815-551-975
+2026-05-04 23:54:43,265 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-04 23:54:43,349 INFO: 127.0.0.1 - - [04/May/2026 23:54:43] "GET / HTTP/1.1" 200 -
+2026-05-04 23:54:43,507 INFO: 127.0.0.1 - - [04/May/2026 23:54:43] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-04 23:54:43,562 INFO: 127.0.0.1 - - [04/May/2026 23:54:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-04 23:59:08,811 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-04 23:59:08,973 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-04 23:59:08,973 INFO: [33mPress CTRL+C to quit[0m
+2026-05-04 23:59:08,975 INFO:  * Restarting with stat
+2026-05-04 23:59:09,939 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-04 23:59:10,074 WARNING:  * Debugger is active!
+2026-05-04 23:59:10,076 INFO:  * Debugger PIN: 815-551-975
+2026-05-04 23:59:16,245 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-04 23:59:16,284 INFO: 127.0.0.1 - - [04/May/2026 23:59:16] "GET / HTTP/1.1" 200 -
+2026-05-04 23:59:16,371 INFO: 127.0.0.1 - - [04/May/2026 23:59:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-04 23:59:19,491 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-04 23:59:19,494 INFO: 127.0.0.1 - - [04/May/2026 23:59:19] "GET / HTTP/1.1" 200 -
+2026-05-04 23:59:19,513 INFO: 127.0.0.1 - - [04/May/2026 23:59:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:00:41,669 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-05 00:00:41,815 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-05 00:00:41,815 INFO: [33mPress CTRL+C to quit[0m
+2026-05-05 00:00:41,822 INFO:  * Restarting with stat
+2026-05-05 00:00:42,772 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-05 00:00:42,903 WARNING:  * Debugger is active!
+2026-05-05 00:00:42,905 INFO:  * Debugger PIN: 815-551-975
+2026-05-05 00:00:46,433 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-05 00:00:46,457 INFO: 127.0.0.1 - - [05/May/2026 00:00:46] "GET / HTTP/1.1" 200 -
+2026-05-05 00:00:46,546 INFO: 127.0.0.1 - - [05/May/2026 00:00:46] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-05 00:00:54,017 INFO: 127.0.0.1 - - [05/May/2026 00:00:54] "GET /profile HTTP/1.1" 200 -
+2026-05-05 00:00:54,034 INFO: 127.0.0.1 - - [05/May/2026 00:00:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:00:54,036 INFO: 127.0.0.1 - - [05/May/2026 00:00:54] "[33mGET /static/profile.jpg HTTP/1.1[0m" 404 -
+2026-05-05 00:01:02,757 INFO: 127.0.0.1 - - [05/May/2026 00:01:02] "GET /works HTTP/1.1" 200 -
+2026-05-05 00:01:02,772 INFO: 127.0.0.1 - - [05/May/2026 00:01:02] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:01:06,747 INFO: 127.0.0.1 - - [05/May/2026 00:01:06] "[35m[1mGET /articles HTTP/1.1[0m" 500 -
+2026-05-05 00:01:06,766 INFO: 127.0.0.1 - - [05/May/2026 00:01:06] "GET /articles?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-05 00:01:06,769 INFO: 127.0.0.1 - - [05/May/2026 00:01:06] "GET /articles?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-05 00:01:06,809 INFO: 127.0.0.1 - - [05/May/2026 00:01:06] "GET /articles?__debugger__=yes&cmd=resource&f=console.png&s=OVbYzE3JWNnOXBRKBZB3 HTTP/1.1" 200 -
+2026-05-05 00:01:06,869 INFO: 127.0.0.1 - - [05/May/2026 00:01:06] "GET /articles?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-05 00:02:25,719 INFO: 127.0.0.1 - - [05/May/2026 00:02:25] "GET /articles HTTP/1.1" 200 -
+2026-05-05 00:02:25,735 INFO: 127.0.0.1 - - [05/May/2026 00:02:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:02:27,906 INFO: 127.0.0.1 - - [05/May/2026 00:02:27] "GET /contact HTTP/1.1" 200 -
+2026-05-05 00:02:27,920 INFO: 127.0.0.1 - - [05/May/2026 00:02:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:02:29,806 INFO: 127.0.0.1 - - [05/May/2026 00:02:29] "GET /login HTTP/1.1" 200 -
+2026-05-05 00:02:29,820 INFO: 127.0.0.1 - - [05/May/2026 00:02:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:05:27,475 WARNING: ÉçÉOÉCÉìé∏îs usr_id=k.azuma.atlab.gmail.com
+2026-05-05 00:05:27,478 INFO: 127.0.0.1 - - [05/May/2026 00:05:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-05 00:05:27,485 INFO: 127.0.0.1 - - [05/May/2026 00:05:27] "GET /login HTTP/1.1" 200 -
+2026-05-05 00:05:27,499 INFO: 127.0.0.1 - - [05/May/2026 00:05:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:06:37,874 INFO: 127.0.0.1 - - [05/May/2026 00:06:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-05 00:06:37,934 INFO: 127.0.0.1 - - [05/May/2026 00:06:37] "GET /dashboard HTTP/1.1" 200 -
+2026-05-05 00:06:37,957 INFO: 127.0.0.1 - - [05/May/2026 00:06:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:07:01,840 INFO: 127.0.0.1 - - [05/May/2026 00:07:01] "[35m[1mGET /works/add HTTP/1.1[0m" 500 -
+2026-05-05 00:07:01,857 INFO: 127.0.0.1 - - [05/May/2026 00:07:01] "GET /works/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-05 00:07:01,866 INFO: 127.0.0.1 - - [05/May/2026 00:07:01] "GET /works/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-05 00:07:01,886 INFO: 127.0.0.1 - - [05/May/2026 00:07:01] "GET /works/add?__debugger__=yes&cmd=resource&f=console.png&s=OVbYzE3JWNnOXBRKBZB3 HTTP/1.1" 200 -
+2026-05-05 00:07:01,915 INFO: 127.0.0.1 - - [05/May/2026 00:07:01] "GET /works/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-05 00:07:51,850 INFO: 127.0.0.1 - - [05/May/2026 00:07:51] "[35m[1mGET /works/add HTTP/1.1[0m" 500 -
+2026-05-05 00:07:51,868 INFO: 127.0.0.1 - - [05/May/2026 00:07:51] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:07:51,876 INFO: 127.0.0.1 - - [05/May/2026 00:07:51] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-05 00:07:51,922 INFO: 127.0.0.1 - - [05/May/2026 00:07:51] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=console.png&s=OVbYzE3JWNnOXBRKBZB3 HTTP/1.1[0m" 304 -
+2026-05-05 00:07:51,962 INFO: 127.0.0.1 - - [05/May/2026 00:07:51] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-05-05 00:08:19,225 INFO: 127.0.0.1 - - [05/May/2026 00:08:19] "[35m[1mGET /works/add HTTP/1.1[0m" 500 -
+2026-05-05 00:08:19,245 INFO: 127.0.0.1 - - [05/May/2026 00:08:19] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:08:19,255 INFO: 127.0.0.1 - - [05/May/2026 00:08:19] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-05 00:08:19,295 INFO: 127.0.0.1 - - [05/May/2026 00:08:19] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=console.png&s=OVbYzE3JWNnOXBRKBZB3 HTTP/1.1[0m" 304 -
+2026-05-05 00:08:19,335 INFO: 127.0.0.1 - - [05/May/2026 00:08:19] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-05-05 00:08:41,501 INFO: 127.0.0.1 - - [05/May/2026 00:08:41] "GET /works/add HTTP/1.1" 200 -
+2026-05-05 00:08:41,519 INFO: 127.0.0.1 - - [05/May/2026 00:08:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:08:46,006 INFO: 127.0.0.1 - - [05/May/2026 00:08:46] "[35m[1mGET /articles/add HTTP/1.1[0m" 500 -
+2026-05-05 00:08:46,024 INFO: 127.0.0.1 - - [05/May/2026 00:08:46] "GET /articles/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-05 00:08:46,032 INFO: 127.0.0.1 - - [05/May/2026 00:08:46] "GET /articles/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-05 00:08:46,074 INFO: 127.0.0.1 - - [05/May/2026 00:08:46] "GET /articles/add?__debugger__=yes&cmd=resource&f=console.png&s=OVbYzE3JWNnOXBRKBZB3 HTTP/1.1" 200 -
+2026-05-05 00:08:46,120 INFO: 127.0.0.1 - - [05/May/2026 00:08:46] "GET /articles/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-05 00:09:34,821 INFO: 127.0.0.1 - - [05/May/2026 00:09:34] "GET /articles/add HTTP/1.1" 200 -
+2026-05-05 00:09:34,844 INFO: 127.0.0.1 - - [05/May/2026 00:09:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:09:38,485 INFO: 127.0.0.1 - - [05/May/2026 00:09:38] "[35m[1mGET /change_password HTTP/1.1[0m" 500 -
+2026-05-05 00:09:38,507 INFO: 127.0.0.1 - - [05/May/2026 00:09:38] "GET /change_password?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-05 00:09:38,523 INFO: 127.0.0.1 - - [05/May/2026 00:09:38] "GET /change_password?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-05 00:09:38,560 INFO: 127.0.0.1 - - [05/May/2026 00:09:38] "GET /change_password?__debugger__=yes&cmd=resource&f=console.png&s=OVbYzE3JWNnOXBRKBZB3 HTTP/1.1" 200 -
+2026-05-05 00:09:38,599 INFO: 127.0.0.1 - - [05/May/2026 00:09:38] "GET /change_password?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-05 00:10:16,745 INFO: 127.0.0.1 - - [05/May/2026 00:10:16] "GET /change_password HTTP/1.1" 200 -
+2026-05-05 00:10:16,769 INFO: 127.0.0.1 - - [05/May/2026 00:10:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:24,995 INFO: 127.0.0.1 - - [05/May/2026 00:10:24] "GET /dashboard HTTP/1.1" 200 -
+2026-05-05 00:10:25,017 INFO: 127.0.0.1 - - [05/May/2026 00:10:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:26,518 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-05 00:10:26,522 INFO: 127.0.0.1 - - [05/May/2026 00:10:26] "GET / HTTP/1.1" 200 -
+2026-05-05 00:10:26,545 INFO: 127.0.0.1 - - [05/May/2026 00:10:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:29,863 INFO: 127.0.0.1 - - [05/May/2026 00:10:29] "GET /dashboard HTTP/1.1" 200 -
+2026-05-05 00:10:29,880 INFO: 127.0.0.1 - - [05/May/2026 00:10:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:36,526 INFO: 127.0.0.1 - - [05/May/2026 00:10:36] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-05 00:10:36,540 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-05 00:10:36,545 INFO: 127.0.0.1 - - [05/May/2026 00:10:36] "GET / HTTP/1.1" 200 -
+2026-05-05 00:10:36,563 INFO: 127.0.0.1 - - [05/May/2026 00:10:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:44,243 INFO: 127.0.0.1 - - [05/May/2026 00:10:44] "GET /works HTTP/1.1" 200 -
+2026-05-05 00:10:44,268 INFO: 127.0.0.1 - - [05/May/2026 00:10:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:44,845 INFO: 127.0.0.1 - - [05/May/2026 00:10:44] "GET /articles HTTP/1.1" 200 -
+2026-05-05 00:10:44,869 INFO: 127.0.0.1 - - [05/May/2026 00:10:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:45,872 INFO: 127.0.0.1 - - [05/May/2026 00:10:45] "GET /contact HTTP/1.1" 200 -
+2026-05-05 00:10:45,896 INFO: 127.0.0.1 - - [05/May/2026 00:10:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:50,255 INFO: 127.0.0.1 - - [05/May/2026 00:10:50] "GET /contact HTTP/1.1" 200 -
+2026-05-05 00:10:50,281 INFO: 127.0.0.1 - - [05/May/2026 00:10:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:52,665 INFO: 127.0.0.1 - - [05/May/2026 00:10:52] "GET /login HTTP/1.1" 200 -
+2026-05-05 00:10:52,692 INFO: 127.0.0.1 - - [05/May/2026 00:10:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:10:54,951 INFO: 127.0.0.1 - - [05/May/2026 00:10:54] "[35m[1mGET /password_reset_request HTTP/1.1[0m" 500 -
+2026-05-05 00:10:54,970 INFO: 127.0.0.1 - - [05/May/2026 00:10:54] "GET /password_reset_request?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-05 00:10:54,977 INFO: 127.0.0.1 - - [05/May/2026 00:10:54] "GET /password_reset_request?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-05 00:10:54,991 INFO: 127.0.0.1 - - [05/May/2026 00:10:54] "GET /password_reset_request?__debugger__=yes&cmd=resource&f=console.png&s=OVbYzE3JWNnOXBRKBZB3 HTTP/1.1" 200 -
+2026-05-05 00:10:55,027 INFO: 127.0.0.1 - - [05/May/2026 00:10:55] "GET /password_reset_request?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-05 00:11:25,924 INFO: 127.0.0.1 - - [05/May/2026 00:11:25] "GET /password_reset_request HTTP/1.1" 200 -
+2026-05-05 00:11:25,948 INFO: 127.0.0.1 - - [05/May/2026 00:11:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:11:39,989 INFO: 127.0.0.1 - - [05/May/2026 00:11:39] "[35m[1mGET /unlock_request HTTP/1.1[0m" 500 -
+2026-05-05 00:11:40,007 INFO: 127.0.0.1 - - [05/May/2026 00:11:40] "GET /unlock_request?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-05 00:11:40,013 INFO: 127.0.0.1 - - [05/May/2026 00:11:40] "GET /unlock_request?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-05 00:11:40,026 INFO: 127.0.0.1 - - [05/May/2026 00:11:40] "GET /unlock_request?__debugger__=yes&cmd=resource&f=console.png&s=OVbYzE3JWNnOXBRKBZB3 HTTP/1.1" 200 -
+2026-05-05 00:11:40,064 INFO: 127.0.0.1 - - [05/May/2026 00:11:40] "GET /unlock_request?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-05 00:12:10,497 INFO: 127.0.0.1 - - [05/May/2026 00:12:10] "GET /unlock_request HTTP/1.1" 200 -
+2026-05-05 00:12:10,520 INFO: 127.0.0.1 - - [05/May/2026 00:12:10] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:12:17,334 INFO: 127.0.0.1 - - [05/May/2026 00:12:17] "GET /profile HTTP/1.1" 200 -
+2026-05-05 00:12:17,370 INFO: 127.0.0.1 - - [05/May/2026 00:12:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:12:17,371 INFO: 127.0.0.1 - - [05/May/2026 00:12:17] "[33mGET /static/profile.jpg HTTP/1.1[0m" 404 -
+2026-05-05 00:12:24,845 INFO: 127.0.0.1 - - [05/May/2026 00:12:24] "GET /works HTTP/1.1" 200 -
+2026-05-05 00:12:24,868 INFO: 127.0.0.1 - - [05/May/2026 00:12:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:12:27,638 INFO: 127.0.0.1 - - [05/May/2026 00:12:27] "GET /articles HTTP/1.1" 200 -
+2026-05-05 00:12:27,665 INFO: 127.0.0.1 - - [05/May/2026 00:12:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:12:29,830 INFO: 127.0.0.1 - - [05/May/2026 00:12:29] "GET /articles HTTP/1.1" 200 -
+2026-05-05 00:12:29,852 INFO: 127.0.0.1 - - [05/May/2026 00:12:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:12:30,605 INFO: 127.0.0.1 - - [05/May/2026 00:12:30] "GET /works HTTP/1.1" 200 -
+2026-05-05 00:12:30,627 INFO: 127.0.0.1 - - [05/May/2026 00:12:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:12:32,250 INFO: 127.0.0.1 - - [05/May/2026 00:12:32] "GET /articles HTTP/1.1" 200 -
+2026-05-05 00:12:32,273 INFO: 127.0.0.1 - - [05/May/2026 00:12:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:12:33,694 INFO: 127.0.0.1 - - [05/May/2026 00:12:33] "GET /contact HTTP/1.1" 200 -
+2026-05-05 00:12:33,718 INFO: 127.0.0.1 - - [05/May/2026 00:12:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-05 00:12:37,552 INFO: 127.0.0.1 - - [05/May/2026 00:12:37] "GET /works HTTP/1.1" 200 -
+2026-05-05 00:12:37,578 INFO: 127.0.0.1 - - [05/May/2026 00:12:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
