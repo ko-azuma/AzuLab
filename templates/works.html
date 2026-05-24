@@ -11,7 +11,7 @@
       <a href="{{ url_for('work_detail', wrk_id=work.wrk_id) }}">
 
         <!-- 画像 -->
-        <img src="{{ url_for('static', filename=work.wrk_img_pt or 'noimage.png') }}" class="thumb">
+        <img src="{{ url_for('static', filename=work.wrk_img_pt or 'images/profile.png') }}" class="thumb">
 
         <!-- タイトル -->
         <h2 class="card-title">{{ work.wrk_nm }}</h2>

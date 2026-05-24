@@ -68,11 +68,11 @@ class User(db.Model):
     dlt_flg = db.Column(db.String(1), default='0')
 
     rec_crtn_prg_id = db.Column(db.String(50))
-    rec_crtn_usr_id = db.Column(db.String(10))
+    rec_crtn_usr_id = db.Column(db.String(255))
     rec_crtn_tmstmp = db.Column(db.DateTime, default=datetime.utcnow)
 
     rec_upd_prg_id = db.Column(db.String(50))
-    rec_upd_usr_id = db.Column(db.String(10))
+    rec_upd_usr_id = db.Column(db.String(255))
     rec_upd_tmstmp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 class UserAuth(db.Model):
@@ -89,11 +89,11 @@ class UserAuth(db.Model):
     dlt_flg = db.Column(db.String(1), default='0')
 
     rec_crtn_prg_id = db.Column(db.String(50))
-    rec_crtn_usr_id = db.Column(db.String(10))
+    rec_crtn_usr_id = db.Column(db.String(255))
     rec_crtn_tmstmp = db.Column(db.DateTime, default=datetime.utcnow)
 
     rec_upd_prg_id = db.Column(db.String(50))
-    rec_upd_usr_id = db.Column(db.String(10))
+    rec_upd_usr_id = db.Column(db.String(255))
     rec_upd_tmstmp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 class Article(db.Model):
@@ -109,11 +109,11 @@ class Article(db.Model):
     dlt_flg = db.Column(db.String(1), default='0')
 
     rec_crtn_prg_id = db.Column(db.String(50))
-    rec_crtn_usr_id = db.Column(db.String(10))
+    rec_crtn_usr_id = db.Column(db.String(255))
     rec_crtn_tmstmp = db.Column(db.DateTime, default=datetime.utcnow)
 
     rec_upd_prg_id = db.Column(db.String(50))
-    rec_upd_usr_id = db.Column(db.String(10))
+    rec_upd_usr_id = db.Column(db.String(255))
     rec_upd_tmstmp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 class Work(db.Model):
@@ -129,11 +129,11 @@ class Work(db.Model):
     dlt_flg = db.Column(db.String(1), default='0')
 
     rec_crtn_prg_id = db.Column(db.String(50))
-    rec_crtn_usr_id = db.Column(db.String(10))
+    rec_crtn_usr_id = db.Column(db.String(255))
     rec_crtn_tmstmp = db.Column(db.DateTime, default=datetime.utcnow)
 
     rec_upd_prg_id = db.Column(db.String(50))
-    rec_upd_usr_id = db.Column(db.String(10))
+    rec_upd_usr_id = db.Column(db.String(255))
     rec_upd_tmstmp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 class Contact(db.Model):
     __tablename__ = "ctc010"
@@ -148,11 +148,11 @@ class Contact(db.Model):
     dlt_flg = db.Column(db.String(1), default='0')
 
     rec_crtn_prg_id = db.Column(db.String(50))
-    rec_crtn_usr_id = db.Column(db.String(10))
+    rec_crtn_usr_id = db.Column(db.String(255))
     rec_crtn_tmstmp = db.Column(db.DateTime, default=datetime.utcnow)
 
     rec_upd_prg_id = db.Column(db.String(50))
-    rec_upd_usr_id = db.Column(db.String(10))
+    rec_upd_usr_id = db.Column(db.String(255))
     rec_upd_tmstmp = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 from datetime import datetime

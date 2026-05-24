@@ -10,7 +10,7 @@
 
       <a href="{{ url_for('article_detail', blg_id=article.blg_id) }}">
 
-        <img src="{{ url_for('static', filename=article.blg_img_pt or 'noimage.png') }}" class="thumb">
+        <img src="{{ url_for('static', filename=article.blg_img_pt or 'images/profile.png') }}" class="thumb">
 
         <h2>{{ article.blg_nm }}</h2>
       </a>
@@ -28,7 +28,7 @@
     <a href="{{ url_for('articles', page=pagination.prev_num) }}">← 前へ</a>
   {% endif %}
 
-  <span>ページ {{ pagination.page }}</span>
+  <span>ページ {{ pagination.page }} / {{ pagination.pages }}</span>
 
   {% if pagination.has_next %}
     <a href="{{ url_for('articles', page=pagination.next_num) }}">次へ →</a>

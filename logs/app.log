@@ -155,3 +155,353 @@
 2026-05-05 00:12:33,718 INFO: 127.0.0.1 - - [05/May/2026 00:12:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
 2026-05-05 00:12:37,552 INFO: 127.0.0.1 - - [05/May/2026 00:12:37] "GET /works HTTP/1.1" 200 -
 2026-05-05 00:12:37,578 INFO: 127.0.0.1 - - [05/May/2026 00:12:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:30:48,171 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 17:30:57,931 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 17:30:57,931 INFO: [33mPress CTRL+C to quit[0m
+2026-05-24 17:30:57,934 INFO:  * Restarting with stat
+2026-05-24 17:31:07,286 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 17:31:07,803 WARNING:  * Debugger is active!
+2026-05-24 17:31:07,811 INFO:  * Debugger PIN: 815-551-975
+2026-05-24 17:31:07,975 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 17:31:08,098 INFO: 127.0.0.1 - - [24/May/2026 17:31:08] "GET / HTTP/1.1" 200 -
+2026-05-24 17:31:10,005 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 17:31:10,010 INFO: 127.0.0.1 - - [24/May/2026 17:31:10] "GET / HTTP/1.1" 200 -
+2026-05-24 17:31:10,904 INFO: 127.0.0.1 - - [24/May/2026 17:31:10] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-24 17:31:11,140 INFO: 127.0.0.1 - - [24/May/2026 17:31:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-24 17:31:29,418 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 17:31:29,432 INFO: 127.0.0.1 - - [24/May/2026 17:31:29] "GET / HTTP/1.1" 200 -
+2026-05-24 17:31:29,833 INFO: 127.0.0.1 - - [24/May/2026 17:31:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:32:18,111 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 17:32:18,408 INFO: 127.0.0.1 - - [24/May/2026 17:32:18] "GET / HTTP/1.1" 200 -
+2026-05-24 17:32:47,238 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 17:32:50,327 INFO: 127.0.0.1 - - [24/May/2026 17:32:50] "GET / HTTP/1.1" 200 -
+2026-05-24 17:32:50,761 INFO: 127.0.0.1 - - [24/May/2026 17:32:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:04,768 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 17:33:04,798 INFO: 127.0.0.1 - - [24/May/2026 17:33:04] "GET / HTTP/1.1" 200 -
+2026-05-24 17:33:04,910 INFO: 127.0.0.1 - - [24/May/2026 17:33:04] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:05,030 INFO: 127.0.0.1 - - [24/May/2026 17:33:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-24 17:33:20,468 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 17:33:20,481 INFO: 127.0.0.1 - - [24/May/2026 17:33:20] "GET / HTTP/1.1" 200 -
+2026-05-24 17:33:20,499 INFO: 127.0.0.1 - - [24/May/2026 17:33:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:22,289 INFO: 127.0.0.1 - - [24/May/2026 17:33:22] "GET /profile HTTP/1.1" 200 -
+2026-05-24 17:33:22,320 INFO: 127.0.0.1 - - [24/May/2026 17:33:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:22,385 INFO: 127.0.0.1 - - [24/May/2026 17:33:22] "[33mGET /static/profile.jpg HTTP/1.1[0m" 404 -
+2026-05-24 17:33:27,217 INFO: 127.0.0.1 - - [24/May/2026 17:33:27] "GET /works HTTP/1.1" 200 -
+2026-05-24 17:33:27,238 INFO: 127.0.0.1 - - [24/May/2026 17:33:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:28,837 INFO: 127.0.0.1 - - [24/May/2026 17:33:28] "GET /articles HTTP/1.1" 200 -
+2026-05-24 17:33:28,858 INFO: 127.0.0.1 - - [24/May/2026 17:33:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:32,420 INFO: 127.0.0.1 - - [24/May/2026 17:33:32] "GET /articles HTTP/1.1" 200 -
+2026-05-24 17:33:32,490 INFO: 127.0.0.1 - - [24/May/2026 17:33:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:33,971 INFO: 127.0.0.1 - - [24/May/2026 17:33:33] "GET /works HTTP/1.1" 200 -
+2026-05-24 17:33:34,025 INFO: 127.0.0.1 - - [24/May/2026 17:33:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:35,484 INFO: 127.0.0.1 - - [24/May/2026 17:33:35] "GET /articles HTTP/1.1" 200 -
+2026-05-24 17:33:35,515 INFO: 127.0.0.1 - - [24/May/2026 17:33:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:42,678 INFO: 127.0.0.1 - - [24/May/2026 17:33:42] "GET /login HTTP/1.1" 200 -
+2026-05-24 17:33:42,713 INFO: 127.0.0.1 - - [24/May/2026 17:33:42] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:33:45,083 INFO: 127.0.0.1 - - [24/May/2026 17:33:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 17:33:45,156 INFO: 127.0.0.1 - - [24/May/2026 17:33:45] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 17:33:45,197 INFO: 127.0.0.1 - - [24/May/2026 17:33:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:34:00,653 INFO: 127.0.0.1 - - [24/May/2026 17:34:00] "GET /works/add HTTP/1.1" 200 -
+2026-05-24 17:34:00,679 INFO: 127.0.0.1 - - [24/May/2026 17:34:00] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:37:29,882 INFO: 127.0.0.1 - - [24/May/2026 17:37:29] "[35m[1mPOST /works/add HTTP/1.1[0m" 500 -
+2026-05-24 17:37:29,946 INFO: 127.0.0.1 - - [24/May/2026 17:37:29] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:37:30,022 INFO: 127.0.0.1 - - [24/May/2026 17:37:30] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-24 17:37:30,096 INFO: 127.0.0.1 - - [24/May/2026 17:37:30] "GET /works/add?__debugger__=yes&cmd=resource&f=console.png&s=wrNs2cRJgrPkhU3bKibM HTTP/1.1" 200 -
+2026-05-24 17:37:30,157 INFO: 127.0.0.1 - - [24/May/2026 17:37:30] "[36mGET /works/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-05-24 17:49:40,891 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 17:49:41,326 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 17:49:41,326 INFO: [33mPress CTRL+C to quit[0m
+2026-05-24 17:49:41,328 INFO:  * Restarting with stat
+2026-05-24 17:49:42,526 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 17:49:42,893 WARNING:  * Debugger is active!
+2026-05-24 17:49:42,895 INFO:  * Debugger PIN: 815-551-975
+2026-05-24 17:49:59,181 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 17:49:59,276 INFO: 127.0.0.1 - - [24/May/2026 17:49:59] "GET / HTTP/1.1" 200 -
+2026-05-24 17:49:59,425 INFO: 127.0.0.1 - - [24/May/2026 17:49:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:50:11,300 INFO: 127.0.0.1 - - [24/May/2026 17:50:11] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 17:50:11,321 INFO: 127.0.0.1 - - [24/May/2026 17:50:11] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:50:20,557 INFO: 127.0.0.1 - - [24/May/2026 17:50:20] "GET /works/add HTTP/1.1" 200 -
+2026-05-24 17:50:20,573 INFO: 127.0.0.1 - - [24/May/2026 17:50:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:51:12,477 INFO: 127.0.0.1 - - [24/May/2026 17:51:12] "[32mPOST /works/add HTTP/1.1[0m" 302 -
+2026-05-24 17:51:12,521 INFO: 127.0.0.1 - - [24/May/2026 17:51:12] "GET /works HTTP/1.1" 200 -
+2026-05-24 17:51:12,542 INFO: 127.0.0.1 - - [24/May/2026 17:51:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:51:12,560 INFO: 127.0.0.1 - - [24/May/2026 17:51:12] "GET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1" 200 -
+2026-05-24 17:51:15,894 INFO: 127.0.0.1 - - [24/May/2026 17:51:15] "GET /works/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 17:51:15,912 INFO: 127.0.0.1 - - [24/May/2026 17:51:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:51:15,916 INFO: 127.0.0.1 - - [24/May/2026 17:51:15] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 17:51:28,888 INFO: 127.0.0.1 - - [24/May/2026 17:51:28] "GET /works/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 17:51:28,914 INFO: 127.0.0.1 - - [24/May/2026 17:51:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 17:51:28,915 INFO: 127.0.0.1 - - [24/May/2026 17:51:28] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 17:51:47,532 INFO: 127.0.0.1 - - [24/May/2026 17:51:47] "GET /articles/add HTTP/1.1" 200 -
+2026-05-24 17:51:47,551 INFO: 127.0.0.1 - - [24/May/2026 17:51:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:07:22,373 INFO: 127.0.0.1 - - [24/May/2026 18:07:22] "[32mPOST /articles/add HTTP/1.1[0m" 302 -
+2026-05-24 18:07:22,424 INFO: 127.0.0.1 - - [24/May/2026 18:07:22] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:07:22,454 INFO: 127.0.0.1 - - [24/May/2026 18:07:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:07:22,470 INFO: 127.0.0.1 - - [24/May/2026 18:07:22] "GET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1" 200 -
+2026-05-24 18:07:27,383 INFO: 127.0.0.1 - - [24/May/2026 18:07:27] "GET /articles/8dcdc13e-6 HTTP/1.1" 200 -
+2026-05-24 18:07:27,399 INFO: 127.0.0.1 - - [24/May/2026 18:07:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:07:27,403 INFO: 127.0.0.1 - - [24/May/2026 18:07:27] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:07:55,250 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 18:07:55,457 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 18:07:55,457 INFO: [33mPress CTRL+C to quit[0m
+2026-05-24 18:07:55,460 INFO:  * Restarting with stat
+2026-05-24 18:07:56,620 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 18:07:56,884 WARNING:  * Debugger is active!
+2026-05-24 18:07:56,896 INFO:  * Debugger PIN: 815-551-975
+2026-05-24 18:08:09,707 INFO: 127.0.0.1 - - [24/May/2026 18:08:09] "GET /articles/8dcdc13e-6 HTTP/1.1" 200 -
+2026-05-24 18:08:09,853 INFO: 127.0.0.1 - - [24/May/2026 18:08:09] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:08:09,855 INFO: 127.0.0.1 - - [24/May/2026 18:08:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:08:12,285 INFO: 127.0.0.1 - - [24/May/2026 18:08:12] "GET /articles/8dcdc13e-6 HTTP/1.1" 200 -
+2026-05-24 18:08:12,307 INFO: 127.0.0.1 - - [24/May/2026 18:08:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:08:12,310 INFO: 127.0.0.1 - - [24/May/2026 18:08:12] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:08:18,544 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 18:08:18,564 INFO: 127.0.0.1 - - [24/May/2026 18:08:18] "GET / HTTP/1.1" 200 -
+2026-05-24 18:08:18,586 INFO: 127.0.0.1 - - [24/May/2026 18:08:18] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:08:18,587 INFO: 127.0.0.1 - - [24/May/2026 18:08:18] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:08:18,615 INFO: 127.0.0.1 - - [24/May/2026 18:08:18] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:08:40,273 INFO: 127.0.0.1 - - [24/May/2026 18:08:40] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:08:40,292 INFO: 127.0.0.1 - - [24/May/2026 18:08:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:08:44,424 INFO: 127.0.0.1 - - [24/May/2026 18:08:44] "[35m[1mGET /works/edit/af00cfd8-3 HTTP/1.1[0m" 500 -
+2026-05-24 18:08:44,468 INFO: 127.0.0.1 - - [24/May/2026 18:08:44] "GET /works/edit/af00cfd8-3?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-24 18:08:44,513 INFO: 127.0.0.1 - - [24/May/2026 18:08:44] "GET /works/edit/af00cfd8-3?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-24 18:08:44,539 INFO: 127.0.0.1 - - [24/May/2026 18:08:44] "GET /works/edit/af00cfd8-3?__debugger__=yes&cmd=resource&f=console.png&s=W7YYG25REjcycbKp7ZM4 HTTP/1.1" 200 -
+2026-05-24 18:08:44,593 INFO: 127.0.0.1 - - [24/May/2026 18:08:44] "GET /works/edit/af00cfd8-3?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-24 18:10:04,042 INFO: 127.0.0.1 - - [24/May/2026 18:10:04] "GET /works/edit/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 18:10:04,061 INFO: 127.0.0.1 - - [24/May/2026 18:10:04] "[33mGET /works/static/style.css HTTP/1.1[0m" 404 -
+2026-05-24 18:11:12,660 INFO: 127.0.0.1 - - [24/May/2026 18:11:12] "GET /articles/edit/8dcdc13e-6 HTTP/1.1" 200 -
+2026-05-24 18:11:12,679 INFO: 127.0.0.1 - - [24/May/2026 18:11:12] "[33mGET /articles/static/style.css HTTP/1.1[0m" 404 -
+2026-05-24 18:11:12,684 INFO: 127.0.0.1 - - [24/May/2026 18:11:12] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:14:13,486 INFO: 127.0.0.1 - - [24/May/2026 18:14:13] "GET /works/edit/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 18:14:13,501 INFO: 127.0.0.1 - - [24/May/2026 18:14:13] "[33mGET /works/static/style.css HTTP/1.1[0m" 404 -
+2026-05-24 18:14:13,509 INFO: 127.0.0.1 - - [24/May/2026 18:14:13] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:18:05,219 INFO: 127.0.0.1 - - [24/May/2026 18:18:05] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:18:05,235 INFO: 127.0.0.1 - - [24/May/2026 18:18:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:18:06,919 INFO: 127.0.0.1 - - [24/May/2026 18:18:06] "GET /works/edit/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 18:18:06,940 INFO: 127.0.0.1 - - [24/May/2026 18:18:06] "[33mGET /works/static/style.css HTTP/1.1[0m" 404 -
+2026-05-24 18:18:06,942 INFO: 127.0.0.1 - - [24/May/2026 18:18:06] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:18:48,839 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 18:18:48,979 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 18:18:48,980 INFO: [33mPress CTRL+C to quit[0m
+2026-05-24 18:18:48,982 INFO:  * Restarting with stat
+2026-05-24 18:18:50,002 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 18:18:50,138 WARNING:  * Debugger is active!
+2026-05-24 18:18:50,140 INFO:  * Debugger PIN: 815-551-975
+2026-05-24 18:18:52,343 INFO: 127.0.0.1 - - [24/May/2026 18:18:52] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:18:52,452 INFO: 127.0.0.1 - - [24/May/2026 18:18:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:18:54,249 INFO: 127.0.0.1 - - [24/May/2026 18:18:54] "GET /works/edit/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 18:18:54,265 INFO: 127.0.0.1 - - [24/May/2026 18:18:54] "[33mGET /works/static/style.css HTTP/1.1[0m" 404 -
+2026-05-24 18:18:54,274 INFO: 127.0.0.1 - - [24/May/2026 18:18:54] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:20:21,381 INFO: 127.0.0.1 - - [24/May/2026 18:20:21] "GET /works/edit/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 18:20:21,399 INFO: 127.0.0.1 - - [24/May/2026 18:20:21] "[33mGET /works/static/style.css HTTP/1.1[0m" 404 -
+2026-05-24 18:20:21,402 INFO: 127.0.0.1 - - [24/May/2026 18:20:21] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:22:44,234 INFO: 127.0.0.1 - - [24/May/2026 18:22:44] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:22:44,250 INFO: 127.0.0.1 - - [24/May/2026 18:22:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:22:47,012 INFO: 127.0.0.1 - - [24/May/2026 18:22:47] "GET /works/edit/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 18:22:47,034 INFO: 127.0.0.1 - - [24/May/2026 18:22:47] "[33mGET /works/static/style.css HTTP/1.1[0m" 404 -
+2026-05-24 18:22:47,038 INFO: 127.0.0.1 - - [24/May/2026 18:22:47] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:25:29,920 INFO: 127.0.0.1 - - [24/May/2026 18:25:29] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:25:29,936 INFO: 127.0.0.1 - - [24/May/2026 18:25:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:25:32,446 INFO: 127.0.0.1 - - [24/May/2026 18:25:32] "GET /works/edit/af00cfd8-3 HTTP/1.1" 200 -
+2026-05-24 18:25:32,473 INFO: 127.0.0.1 - - [24/May/2026 18:25:32] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:25:32,473 INFO: 127.0.0.1 - - [24/May/2026 18:25:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:25:41,428 INFO: 127.0.0.1 - - [24/May/2026 18:25:41] "GET /articles/edit/8dcdc13e-6 HTTP/1.1" 200 -
+2026-05-24 18:25:41,448 INFO: 127.0.0.1 - - [24/May/2026 18:25:41] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:25:41,452 INFO: 127.0.0.1 - - [24/May/2026 18:25:41] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:26:54,151 INFO: 127.0.0.1 - - [24/May/2026 18:26:54] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 18:26:54,166 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 18:26:54,177 INFO: 127.0.0.1 - - [24/May/2026 18:26:54] "GET / HTTP/1.1" 200 -
+2026-05-24 18:26:54,191 INFO: 127.0.0.1 - - [24/May/2026 18:26:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:26:54,197 INFO: 127.0.0.1 - - [24/May/2026 18:26:54] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:26:54,205 INFO: 127.0.0.1 - - [24/May/2026 18:26:54] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:26:58,109 INFO: 127.0.0.1 - - [24/May/2026 18:26:58] "GET /login HTTP/1.1" 200 -
+2026-05-24 18:26:58,122 INFO: 127.0.0.1 - - [24/May/2026 18:26:58] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:29:50,119 INFO: 127.0.0.1 - - [24/May/2026 18:29:50] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 18:29:50,135 INFO: 127.0.0.1 - - [24/May/2026 18:29:50] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:29:50,157 INFO: 127.0.0.1 - - [24/May/2026 18:29:50] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:30:16,088 INFO: 127.0.0.1 - - [24/May/2026 18:30:16] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 18:30:16,103 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 18:30:16,108 INFO: 127.0.0.1 - - [24/May/2026 18:30:16] "GET / HTTP/1.1" 200 -
+2026-05-24 18:30:16,125 INFO: 127.0.0.1 - - [24/May/2026 18:30:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:30:16,130 INFO: 127.0.0.1 - - [24/May/2026 18:30:16] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:30:16,139 INFO: 127.0.0.1 - - [24/May/2026 18:30:16] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:30:33,730 INFO: 127.0.0.1 - - [24/May/2026 18:30:33] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:30:33,751 INFO: 127.0.0.1 - - [24/May/2026 18:30:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:30:33,802 INFO: 127.0.0.1 - - [24/May/2026 18:30:33] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:30:36,311 INFO: 127.0.0.1 - - [24/May/2026 18:30:36] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:30:36,329 INFO: 127.0.0.1 - - [24/May/2026 18:30:36] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:30:36,333 INFO: 127.0.0.1 - - [24/May/2026 18:30:36] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:30:38,312 INFO: 127.0.0.1 - - [24/May/2026 18:30:38] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:30:38,340 INFO: 127.0.0.1 - - [24/May/2026 18:30:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:30:38,340 INFO: 127.0.0.1 - - [24/May/2026 18:30:38] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:30:39,982 INFO: 127.0.0.1 - - [24/May/2026 18:30:39] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:30:40,004 INFO: 127.0.0.1 - - [24/May/2026 18:30:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:30:40,004 INFO: 127.0.0.1 - - [24/May/2026 18:30:40] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:31:34,195 INFO: 127.0.0.1 - - [24/May/2026 18:31:34] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:31:34,224 INFO: 127.0.0.1 - - [24/May/2026 18:31:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:31:34,227 INFO: 127.0.0.1 - - [24/May/2026 18:31:34] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:22,253 INFO: 127.0.0.1 - - [24/May/2026 18:33:22] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:33:22,268 INFO: 127.0.0.1 - - [24/May/2026 18:33:22] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:22,283 INFO: 127.0.0.1 - - [24/May/2026 18:33:22] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:24,318 INFO: 127.0.0.1 - - [24/May/2026 18:33:24] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:33:24,342 INFO: 127.0.0.1 - - [24/May/2026 18:33:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:24,346 INFO: 127.0.0.1 - - [24/May/2026 18:33:24] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:25,498 INFO: 127.0.0.1 - - [24/May/2026 18:33:25] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:33:25,519 INFO: 127.0.0.1 - - [24/May/2026 18:33:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:25,520 INFO: 127.0.0.1 - - [24/May/2026 18:33:25] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:26,711 INFO: 127.0.0.1 - - [24/May/2026 18:33:26] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:33:26,732 INFO: 127.0.0.1 - - [24/May/2026 18:33:26] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:26,732 INFO: 127.0.0.1 - - [24/May/2026 18:33:26] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:27,950 INFO: 127.0.0.1 - - [24/May/2026 18:33:27] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:33:27,971 INFO: 127.0.0.1 - - [24/May/2026 18:33:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:27,972 INFO: 127.0.0.1 - - [24/May/2026 18:33:27] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:30,761 INFO: 127.0.0.1 - - [24/May/2026 18:33:30] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:33:30,785 INFO: 127.0.0.1 - - [24/May/2026 18:33:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:30,785 INFO: 127.0.0.1 - - [24/May/2026 18:33:30] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:32,662 INFO: 127.0.0.1 - - [24/May/2026 18:33:32] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:33:32,681 INFO: 127.0.0.1 - - [24/May/2026 18:33:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:32,684 INFO: 127.0.0.1 - - [24/May/2026 18:33:32] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:37,765 INFO: 127.0.0.1 - - [24/May/2026 18:33:37] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:33:37,790 INFO: 127.0.0.1 - - [24/May/2026 18:33:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:37,791 INFO: 127.0.0.1 - - [24/May/2026 18:33:37] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:39,453 INFO: 127.0.0.1 - - [24/May/2026 18:33:39] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:33:39,477 INFO: 127.0.0.1 - - [24/May/2026 18:33:39] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:39,480 INFO: 127.0.0.1 - - [24/May/2026 18:33:39] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:40,960 INFO: 127.0.0.1 - - [24/May/2026 18:33:40] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:33:40,984 INFO: 127.0.0.1 - - [24/May/2026 18:33:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:40,985 INFO: 127.0.0.1 - - [24/May/2026 18:33:40] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:44,434 INFO: 127.0.0.1 - - [24/May/2026 18:33:44] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:33:44,455 INFO: 127.0.0.1 - - [24/May/2026 18:33:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:44,460 INFO: 127.0.0.1 - - [24/May/2026 18:33:44] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:47,987 INFO: 127.0.0.1 - - [24/May/2026 18:33:47] "GET /works HTTP/1.1" 200 -
+2026-05-24 18:33:48,014 INFO: 127.0.0.1 - - [24/May/2026 18:33:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:48,016 INFO: 127.0.0.1 - - [24/May/2026 18:33:48] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:51,653 INFO: 127.0.0.1 - - [24/May/2026 18:33:51] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:33:51,677 INFO: 127.0.0.1 - - [24/May/2026 18:33:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:51,680 INFO: 127.0.0.1 - - [24/May/2026 18:33:51] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:33:57,226 INFO: 127.0.0.1 - - [24/May/2026 18:33:57] "GET /articles/8dcdc13e-6 HTTP/1.1" 200 -
+2026-05-24 18:33:57,249 INFO: 127.0.0.1 - - [24/May/2026 18:33:57] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:33:57,253 INFO: 127.0.0.1 - - [24/May/2026 18:33:57] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:41:37,656 INFO: 127.0.0.1 - - [24/May/2026 18:41:37] "GET /articles/8dcdc13e-6 HTTP/1.1" 200 -
+2026-05-24 18:41:37,690 INFO: 127.0.0.1 - - [24/May/2026 18:41:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:41:37,712 INFO: 127.0.0.1 - - [24/May/2026 18:41:37] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:41:44,966 INFO: 127.0.0.1 - - [24/May/2026 18:41:44] "GET /login HTTP/1.1" 200 -
+2026-05-24 18:41:44,992 INFO: 127.0.0.1 - - [24/May/2026 18:41:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:43:49,288 INFO: 127.0.0.1 - - [24/May/2026 18:43:49] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-05-24 18:43:49,303 INFO: 127.0.0.1 - - [24/May/2026 18:43:49] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:43:49,318 INFO: 127.0.0.1 - - [24/May/2026 18:43:49] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:43:56,008 INFO: 127.0.0.1 - - [24/May/2026 18:43:56] "GET /articles/edit/8dcdc13e-6 HTTP/1.1" 200 -
+2026-05-24 18:43:56,032 INFO: 127.0.0.1 - - [24/May/2026 18:43:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:43:56,036 INFO: 127.0.0.1 - - [24/May/2026 18:43:56] "[36mGET /static/uploads/c2d37e66-76da-4bc1-a619-6003991dd55f_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-05-24 18:44:31,706 INFO: 127.0.0.1 - - [24/May/2026 18:44:31] "[32mPOST /articles/delete/8dcdc13e-6 HTTP/1.1[0m" 302 -
+2026-05-24 18:44:31,731 INFO: 127.0.0.1 - - [24/May/2026 18:44:31] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:44:31,756 INFO: 127.0.0.1 - - [24/May/2026 18:44:31] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:44:35,000 INFO: 127.0.0.1 - - [24/May/2026 18:44:35] "GET /articles/add HTTP/1.1" 200 -
+2026-05-24 18:44:35,028 INFO: 127.0.0.1 - - [24/May/2026 18:44:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:45:21,814 INFO: 127.0.0.1 - - [24/May/2026 18:45:21] "[32mPOST /articles/add HTTP/1.1[0m" 302 -
+2026-05-24 18:45:21,828 INFO: 127.0.0.1 - - [24/May/2026 18:45:21] "GET /articles HTTP/1.1" 200 -
+2026-05-24 18:45:21,852 INFO: 127.0.0.1 - - [24/May/2026 18:45:21] "[33mGET /static/noimage.png HTTP/1.1[0m" 404 -
+2026-05-24 18:45:21,852 INFO: 127.0.0.1 - - [24/May/2026 18:45:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:45:30,448 INFO: 127.0.0.1 - - [24/May/2026 18:45:30] "GET /works/add HTTP/1.1" 200 -
+2026-05-24 18:45:30,474 INFO: 127.0.0.1 - - [24/May/2026 18:45:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:45:33,083 INFO: 127.0.0.1 - - [24/May/2026 18:45:33] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:45:33,104 INFO: 127.0.0.1 - - [24/May/2026 18:45:33] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:45:35,470 INFO: 127.0.0.1 - - [24/May/2026 18:45:35] "GET /articles/add HTTP/1.1" 200 -
+2026-05-24 18:45:35,494 INFO: 127.0.0.1 - - [24/May/2026 18:45:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:45:37,004 INFO: 127.0.0.1 - - [24/May/2026 18:45:37] "GET /works/add HTTP/1.1" 200 -
+2026-05-24 18:45:37,026 INFO: 127.0.0.1 - - [24/May/2026 18:45:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:45:38,166 INFO: 127.0.0.1 - - [24/May/2026 18:45:38] "GET /works/add HTTP/1.1" 200 -
+2026-05-24 18:45:38,188 INFO: 127.0.0.1 - - [24/May/2026 18:45:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:45:40,115 INFO: 127.0.0.1 - - [24/May/2026 18:45:40] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:45:40,133 INFO: 127.0.0.1 - - [24/May/2026 18:45:40] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:45:44,121 INFO: 127.0.0.1 - - [24/May/2026 18:45:44] "GET /articles/edit/4e8a5fcc-3 HTTP/1.1" 200 -
+2026-05-24 18:45:44,144 INFO: 127.0.0.1 - - [24/May/2026 18:45:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:50:11,265 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 18:50:11,330 INFO: 127.0.0.1 - - [24/May/2026 18:50:11] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-05-24 18:50:11,346 INFO: 127.0.0.1 - - [24/May/2026 18:50:11] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:50:11,350 INFO: 127.0.0.1 - - [24/May/2026 18:50:11] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-24 18:50:11,396 INFO: 127.0.0.1 - - [24/May/2026 18:50:11] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=XfxXNfYLiRxazzep8r9z HTTP/1.1" 200 -
+2026-05-24 18:50:11,449 INFO: 127.0.0.1 - - [24/May/2026 18:50:11] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-05-24 18:55:43,066 INFO: 127.0.0.1 - - [24/May/2026 18:55:43] "GET /dashboard HTTP/1.1" 200 -
+2026-05-24 18:55:43,082 INFO: 127.0.0.1 - - [24/May/2026 18:55:43] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:55:47,346 INFO: 127.0.0.1 - - [24/May/2026 18:55:47] "[32mGET /logout HTTP/1.1[0m" 302 -
+2026-05-24 18:55:47,361 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 18:55:47,382 INFO: 127.0.0.1 - - [24/May/2026 18:55:47] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-05-24 18:55:47,400 INFO: 127.0.0.1 - - [24/May/2026 18:55:47] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:55:47,422 INFO: 127.0.0.1 - - [24/May/2026 18:55:47] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-24 18:55:47,445 INFO: 127.0.0.1 - - [24/May/2026 18:55:47] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=XfxXNfYLiRxazzep8r9z HTTP/1.1[0m" 304 -
+2026-05-24 18:56:59,245 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 18:56:59,277 INFO: 127.0.0.1 - - [24/May/2026 18:56:59] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-05-24 18:56:59,295 INFO: 127.0.0.1 - - [24/May/2026 18:56:59] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:56:59,307 INFO: 127.0.0.1 - - [24/May/2026 18:56:59] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-24 18:56:59,333 INFO: 127.0.0.1 - - [24/May/2026 18:56:59] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png&s=XfxXNfYLiRxazzep8r9z HTTP/1.1[0m" 304 -
+2026-05-24 18:56:59,384 INFO: 127.0.0.1 - - [24/May/2026 18:56:59] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-05-24 18:57:23,450 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 18:57:23,674 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 18:57:23,674 INFO: [33mPress CTRL+C to quit[0m
+2026-05-24 18:57:23,677 INFO:  * Restarting with stat
+2026-05-24 18:57:24,667 ERROR: DBê⁄ë±ÉGÉâÅ[
+2026-05-24 18:57:24,811 WARNING:  * Debugger is active!
+2026-05-24 18:57:24,814 INFO:  * Debugger PIN: 815-551-975
+2026-05-24 18:57:26,169 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 18:57:26,235 INFO: 127.0.0.1 - - [24/May/2026 18:57:26] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-05-24 18:57:26,419 INFO: 127.0.0.1 - - [24/May/2026 18:57:26] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:57:26,433 INFO: 127.0.0.1 - - [24/May/2026 18:57:26] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2026-05-24 18:57:26,456 INFO: 127.0.0.1 - - [24/May/2026 18:57:26] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=fBtl6PJnlYaP2uo00q8v HTTP/1.1" 200 -
+2026-05-24 18:57:26,503 INFO: 127.0.0.1 - - [24/May/2026 18:57:26] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2026-05-24 18:59:45,009 INFO: ÉgÉbÉvÉyÅ[ÉWÉAÉNÉZÉX
+2026-05-24 18:59:45,038 INFO: 127.0.0.1 - - [24/May/2026 18:59:45] "GET / HTTP/1.1" 200 -
+2026-05-24 18:59:45,055 INFO: 127.0.0.1 - - [24/May/2026 18:59:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:59:45,063 INFO: 127.0.0.1 - - [24/May/2026 18:59:45] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 18:59:45,070 INFO: 127.0.0.1 - - [24/May/2026 18:59:45] "GET /static/images/profile.png HTTP/1.1" 200 -
+2026-05-24 18:59:51,416 INFO: 127.0.0.1 - - [24/May/2026 18:59:51] "GET /articles/4e8a5fcc-3 HTTP/1.1" 200 -
+2026-05-24 18:59:51,431 INFO: 127.0.0.1 - - [24/May/2026 18:59:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 18:59:51,434 INFO: 127.0.0.1 - - [24/May/2026 18:59:51] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-05-24 19:00:01,184 INFO: 127.0.0.1 - - [24/May/2026 19:00:01] "GET /works HTTP/1.1" 200 -
+2026-05-24 19:00:01,199 INFO: 127.0.0.1 - - [24/May/2026 19:00:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:00:01,201 INFO: 127.0.0.1 - - [24/May/2026 19:00:01] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 19:00:03,601 INFO: 127.0.0.1 - - [24/May/2026 19:00:03] "GET /articles HTTP/1.1" 200 -
+2026-05-24 19:00:03,617 INFO: 127.0.0.1 - - [24/May/2026 19:00:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:00:03,619 INFO: 127.0.0.1 - - [24/May/2026 19:00:03] "[33mGET /static/noimage.png HTTP/1.1[0m" 404 -
+2026-05-24 19:02:09,951 INFO: 127.0.0.1 - - [24/May/2026 19:02:09] "GET /articles HTTP/1.1" 200 -
+2026-05-24 19:02:09,966 INFO: 127.0.0.1 - - [24/May/2026 19:02:09] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:09,973 INFO: 127.0.0.1 - - [24/May/2026 19:02:09] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:17,794 INFO: 127.0.0.1 - - [24/May/2026 19:02:17] "GET /works HTTP/1.1" 200 -
+2026-05-24 19:02:17,821 INFO: 127.0.0.1 - - [24/May/2026 19:02:17] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:17,824 INFO: 127.0.0.1 - - [24/May/2026 19:02:17] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:19,243 INFO: 127.0.0.1 - - [24/May/2026 19:02:19] "GET /profile HTTP/1.1" 200 -
+2026-05-24 19:02:19,257 INFO: 127.0.0.1 - - [24/May/2026 19:02:19] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:19,259 INFO: 127.0.0.1 - - [24/May/2026 19:02:19] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:24,058 INFO: 127.0.0.1 - - [24/May/2026 19:02:24] "GET /works HTTP/1.1" 200 -
+2026-05-24 19:02:24,083 INFO: 127.0.0.1 - - [24/May/2026 19:02:24] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:24,084 INFO: 127.0.0.1 - - [24/May/2026 19:02:24] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:25,137 INFO: 127.0.0.1 - - [24/May/2026 19:02:25] "GET /articles HTTP/1.1" 200 -
+2026-05-24 19:02:25,157 INFO: 127.0.0.1 - - [24/May/2026 19:02:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:25,159 INFO: 127.0.0.1 - - [24/May/2026 19:02:25] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:27,042 INFO: 127.0.0.1 - - [24/May/2026 19:02:27] "GET /contact HTTP/1.1" 200 -
+2026-05-24 19:02:27,056 INFO: 127.0.0.1 - - [24/May/2026 19:02:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:28,388 INFO: 127.0.0.1 - - [24/May/2026 19:02:28] "GET /articles HTTP/1.1" 200 -
+2026-05-24 19:02:28,408 INFO: 127.0.0.1 - - [24/May/2026 19:02:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:28,410 INFO: 127.0.0.1 - - [24/May/2026 19:02:28] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:29,531 INFO: 127.0.0.1 - - [24/May/2026 19:02:29] "GET /profile HTTP/1.1" 200 -
+2026-05-24 19:02:29,557 INFO: 127.0.0.1 - - [24/May/2026 19:02:29] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:29,557 INFO: 127.0.0.1 - - [24/May/2026 19:02:29] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:31,984 INFO: 127.0.0.1 - - [24/May/2026 19:02:31] "GET /works HTTP/1.1" 200 -
+2026-05-24 19:02:32,012 INFO: 127.0.0.1 - - [24/May/2026 19:02:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:32,013 INFO: 127.0.0.1 - - [24/May/2026 19:02:32] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:32,927 INFO: 127.0.0.1 - - [24/May/2026 19:02:32] "GET /articles HTTP/1.1" 200 -
+2026-05-24 19:02:32,950 INFO: 127.0.0.1 - - [24/May/2026 19:02:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:32,951 INFO: 127.0.0.1 - - [24/May/2026 19:02:32] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:34,435 INFO: 127.0.0.1 - - [24/May/2026 19:02:34] "GET /works HTTP/1.1" 200 -
+2026-05-24 19:02:34,458 INFO: 127.0.0.1 - - [24/May/2026 19:02:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:34,460 INFO: 127.0.0.1 - - [24/May/2026 19:02:34] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:35,795 INFO: 127.0.0.1 - - [24/May/2026 19:02:35] "GET /articles HTTP/1.1" 200 -
+2026-05-24 19:02:35,817 INFO: 127.0.0.1 - - [24/May/2026 19:02:35] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:35,818 INFO: 127.0.0.1 - - [24/May/2026 19:02:35] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-05-24 19:02:37,676 INFO: 127.0.0.1 - - [24/May/2026 19:02:37] "GET /works HTTP/1.1" 200 -
+2026-05-24 19:02:37,701 INFO: 127.0.0.1 - - [24/May/2026 19:02:37] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 19:02:37,701 INFO: 127.0.0.1 - - [24/May/2026 19:02:37] "[36mGET /static/uploads/b50238f8-36c5-4b94-9b3d-1a9aa90c328a_Yahoo-Mail-Logo.png HTTP/1.1[0m" 304 -

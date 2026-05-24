@@ -16,10 +16,18 @@
 
       {% for work in works %}
         <div class="card">
-          <a href="/works/{{ work.wrk_id }}">
-            <img src="{{ url_for('static', filename=work.wrk_img_pt) }}" class="thumb">
+
+          <a href="{{ url_for('work_detail', wrk_id=work.wrk_id) }}">
+
+            <img
+              src="{{ url_for('static', filename=work.wrk_img_pt or 'images/profile.png') }}"
+              class="thumb"
+            >
+
             <p>{{ work.wrk_nm }}</p>
+
           </a>
+
         </div>
       {% endfor %}
     </div>
@@ -30,10 +38,18 @@
 
       {% for article in articles %}
         <div class="card">
-          <a href="/articles/{{ article.blg_id }}">
-            <img src="{{ url_for('static', filename=article.blg_img_pt) }}" class="thumb">
+
+          <a href="{{ url_for('article_detail', blg_id=article.blg_id) }}">
+
+            <img
+              src="{{ url_for('static', filename=article.blg_img_pt or 'images/profile.png') }}"
+              class="thumb"
+            >
+
             <p>{{ article.blg_nm }}</p>
+
           </a>
+
         </div>
       {% endfor %}
     </div>

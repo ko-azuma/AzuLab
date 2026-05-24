@@ -1,27 +1,42 @@
-{% extends "header login.html" %}
-
+{% extends "header.html" %}
 {% block content %}
 
-<h1 class="page-title">作品追加</h1>
+<h1 class="page-title">作品編集</h1>
 
 <form method="POST" enctype="multipart/form-data">
 
   <label>作品名</label><br>
-  <input type="text" name="wrk_nm" required><br><br>
+  <input type="text" name="wrk_nm" value="{{ work.wrk_nm }}" required><br><br>
 
-  <label>画像</label><br>
+  <label>現在の画像</label><br>
+  {% if work.wrk_img_pt %}
+    <img
+      src="{{ url_for('static', filename=work.wrk_img_pt) }}"
+      width="200"
+    ><br>
+  {% endif %}
+
+  <label>画像変更</label><br>
   <input type="file" name="image"><br><br>
 
   <label>カテゴリー</label><br>
-  <input type="text" name="wrk_ctg"><br><br>
+  <input
+    type="text"
+    name="wrk_ctg"
+    value="{{ work.wrk_ctg }}"
+  ><br><br>
 
   <label>詳細</label><br>
-  <textarea name="wrk_dtl"></textarea><br><br>
+  <textarea name="wrk_dtl">{{ work.wrk_dtl }}</textarea><br><br>
 
   <label>URL</label><br>
-  <input type="text" name="wrk_url"><br><br>
+  <input
+    type="text"
+    name="wrk_url"
+    value="{{ work.wrk_url }}"
+  ><br><br>
 
-  <button type="submit">追加</button>
+  <button type="submit">更新</button>
 
 </form>
 
