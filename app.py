@@ -6,6 +6,8 @@ import os
 import logging
 from dotenv import load_dotenv
 load_dotenv()
+admin_email = os.getenv("ADMIN_EMAIL")
+admin_password = os.getenv("ADMIN_PASSWORD")
 
 # Flaskアプリ設定
 app = Flask(__name__)
@@ -391,7 +393,7 @@ def password_reset_request():
 
         # 🔥 常に同じレスポンス
         flash("メールを送信しました（該当するアカウントが存在する場合）")
-        return redirect(url_for("login"))
+        return redirect(url_for("reset_request_done"))
 
     return render_template("password_reset_request.html")
 
@@ -496,9 +498,9 @@ def unlock_request():
 
         # 🔥 絶対に同じ挙動
         flash("メールを送信しました（該当するアカウントが存在する場合）")
-        return redirect(url_for("login"))
+        return redirect(url_for("unlock_request_done"))
 
-    return render_template("unlock_request.html")
+    return render_template("unlock_request_done.html")
 
 @app.route("/unlock_request_done")
 def unlock_request_done():
@@ -807,7 +809,7 @@ def create_initial_user():
 
     # 既に存在するかチェック
     existing_user = User.query.filter_by(
-        usr_id="k.azuma.atlab@gmail.com"
+        usr_id=admin_email
     ).first()
 
     if existing_user:
@@ -815,7 +817,7 @@ def create_initial_user():
 
     # USR010
     user = User(
-        usr_id="k.azuma.atlab@gmail.com",
+        usr_id=admin_email,
         usr_nm="管理者",
         dlt_flg='0',
         rec_crtn_prg_id="INIT",
@@ -824,8 +826,8 @@ def create_initial_user():
 
     # USR020
     auth = UserAuth(
-        usr_id="k.azuma.atlab@gmail.com",
-        password_hash=generate_password_hash("Azulab7908"),
+        usr_id=admin_email,
+        password_hash=generate_password_hash(admin_password),
         login_fail_count=0,
         account_lock_flg='0',
         rec_crtn_prg_id="INIT",

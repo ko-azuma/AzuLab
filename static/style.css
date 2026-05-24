@@ -4,6 +4,8 @@
 body {
   margin: 0;
   font-family: "MS Mincho", serif;
+  background: #f5f5f5;
+  color: #333;
 }
 
 .content {
@@ -21,14 +23,15 @@ body {
 .header {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: #333;
 }
 
 .logo a {
   color: white;
-  font-size: 24px;
+  font-size: 28px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 nav {
@@ -39,6 +42,11 @@ nav a {
   color: white;
   margin-left: 15px;
   text-decoration: none;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.7;
 }
 
 /* =======================
@@ -49,10 +57,22 @@ form {
   margin: 0 auto;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 5px;
+  margin-bottom: 15px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 /* =======================
@@ -62,21 +82,78 @@ button {
   padding: 10px 20px;
   background-color: #333;
   color: white;
+
   border: none;
+  border-radius: 5px;
+
   cursor: pointer;
+  transition: 0.2s;
+
+  font-family: "MS Mincho", serif;
 }
 
-button.danger {
-  background-color: red;
+button:hover {
+  opacity: 0.8;
 }
 
 .add-btn {
   display: inline-block;
+
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 10px 15px;
+
   background-color: #007bff;
   color: white;
+
   text-decoration: none;
+  border-radius: 5px;
+}
+
+.add-btn:hover {
+  opacity: 0.8;
+}
+
+/* =======================
+   編集・削除ボタン
+======================= */
+.edit-btn,
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+  min-height: 36px;
+
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-family: "MS Mincho", serif;
+
+  box-sizing: border-box;
+
+  transition: 0.2s;
+}
+
+/* 編集 */
+.edit-btn {
+  background: #007bff;
+}
+
+/* 削除 */
+.delete-btn {
+  background: #dc3545;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  opacity: 0.8;
 }
 
 /* =======================
@@ -85,42 +162,14 @@ button.danger {
 .flash-message {
   background-color: #4CAF50;
   color: white;
-  padding: 10px;
-  margin: 10px;
-}
 
-/* =======================
-   カード
-======================= */
-.card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+  padding: 12px;
+  margin: 10px auto;
 
-.card:hover {
-  transform: translateY(-5px);
-  transition: 0.2s;
-}
+  width: 80%;
 
-.card a {
-  text-decoration: none;
-  color: #333;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.thumb {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
   border-radius: 5px;
+  text-align: center;
 }
 
 /* =======================
@@ -133,17 +182,97 @@ button.danger {
 }
 
 /* =======================
+   カード
+======================= */
+.card {
+  background: #fff;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  transition: 0.2s;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 420px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* タイトル */
+.card-title {
+  margin: 12px 12px 8px;
+  font-size: 20px;
+
+  height: 50px;
+
+  overflow: hidden;
+}
+
+/* 詳細 */
+.card-text {
+  margin: 0 12px 12px;
+
+  line-height: 1.5;
+  font-size: 14px;
+  color: #555;
+
+  flex-grow: 1;
+
+  overflow: hidden;
+}
+
+/* =======================
+   サムネイル画像統一
+======================= */
+.thumb {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+/* =======================
    詳細ページ
 ======================= */
 .detail-container {
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
+
+  background: white;
+  padding: 30px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
   text-align: center;
 }
 
 .detail-img {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
+  height: 350px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
   margin: 20px 0;
 }
 
@@ -157,28 +286,36 @@ button.danger {
 
 .profile-card {
   width: 400px;
+
   margin: 0 auto;
   padding: 20px;
+
   border-radius: 10px;
+
   background: #fff;
+
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .profile-img {
   width: 150px;
   height: 150px;
+
   object-fit: cover;
+
   border-radius: 50%;
+
   margin-bottom: 15px;
 }
 
 .profile-text {
   margin: 15px 0;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .profile-links a {
   margin: 0 10px;
+
   text-decoration: none;
   color: #007bff;
 }
@@ -199,6 +336,7 @@ button.danger {
 .site-subtitle {
   font-size: 18px;
   margin-bottom: 40px;
+  color: #555;
 }
 
 .top-content {
@@ -208,7 +346,7 @@ button.danger {
 }
 
 .section {
-  width: 300px;
+  width: 350px;
   text-align: left;
 }
 
@@ -232,25 +370,71 @@ button.danger {
 
 .btn {
   display: inline-block;
+
   margin-top: 20px;
   padding: 10px 20px;
+
   background: #333;
   color: #fff;
+
   text-decoration: none;
+
   border-radius: 5px;
 }
 
 /* =======================
-   アイテム（管理画面）
+   ダッシュボード
 ======================= */
-.item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.item form {
-  display: inline;
+.dashboard-card {
+  background: white;
+
+  border-radius: 10px;
+  padding: 20px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  height: 600px;
+  overflow-y: auto;
+}
+
+.dashboard-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.dashboard-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.item-info strong {
+  font-size: 16px;
+}
+
+.item-info small {
+  color: #777;
+}
+
+.item-info p {
+  margin-top: 8px;
+
+  font-size: 14px;
+  color: #555;
+
+  line-height: 1.5;
+}
+
+.item-actions {
+  margin-top: 10px;
 }
 
 /* =======================
@@ -259,4 +443,51 @@ button.danger {
 .pagination {
   text-align: center;
   margin-top: 20px;
+}
+
+.pagination a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: #007bff;
+}
+
+/* =======================
+   レスポンシブ
+======================= */
+@media (max-width: 1000px) {
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-card {
+    height: auto;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .detail-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .profile-card {
+    width: 90%;
+  }
+
+  .section {
+    width: 100%;
+  }
 }
