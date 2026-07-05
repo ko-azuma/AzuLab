@@ -571,6 +571,21 @@ def edit_work(wrk_id):
 
     return render_template("work_edit.html", work=work)
 
+@app.route("/works/delete/<string:wrk_id>", methods=["POST"])
+@login_required
+def delete_work(wrk_id):
+    work = Work.query.get_or_404(wrk_id)
+
+    delete_image(work.wrk_img_pt)
+
+    work.dlt_flg = "1"
+    work.rec_upd_usr_id = session.get("user_id")
+    work.rec_upd_tmstmp = datetime.utcnow()
+
+    db.session.commit()
+
+    return redirect(url_for("dashboard"))
+
 # =========================
 # ARTICLES
 # =========================
@@ -665,6 +680,21 @@ def edit_article(blg_id):
         return redirect(url_for("articles"))
 
     return render_template("article_edit.html", article=article)
+
+@app.route("/articles/delete/<string:blg_id>", methods=["POST"])
+@login_required
+def delete_article(blg_id):
+    article = Article.query.get_or_404(blg_id)
+
+    delete_image(article.blg_img_pt)
+
+    article.dlt_flg = "1"
+    article.rec_upd_usr_id = session.get("user_id")
+    article.rec_upd_tmstmp = datetime.utcnow()
+
+    db.session.commit()
+
+    return redirect(url_for("dashboard"))
 # =========================
 # CONTACT
 # =========================
@@ -674,13 +704,21 @@ def contact():
 
     if request.method == "POST":
 
+        # お問い合わせ内容を取得
+        ctc_dtl = request.form.get("ctc_dtl")
+
+        # 1000文字チェック
+        if len(ctc_dtl) > 1000:
+            flash("お問い合わせ内容は1000文字以内で入力してください。")
+            return redirect(url_for("contact"))
+
         contact = Contact(
             ctc_id=str(uuid.uuid4())[:10],
             ctc_nm=request.form["ctc_nm"],
             ctc_nm_kn=request.form.get("ctc_nm_kn"),
             ctc_ml=request.form.get("ctc_ml"),
             ctc_hn=request.form.get("ctc_hn"),
-            ctc_dtl=request.form.get("ctc_dtl"),
+            ctc_dtl=ctc_dtl,
             dlt_flg='0',
             rec_crtn_prg_id="CONTACT",
             rec_crtn_usr_id="GUEST",

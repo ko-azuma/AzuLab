@@ -9,17 +9,17 @@
   <input type="text" name="ctc_nm" required><br><br>
 
   <label>フリガナ</label><br>
-  <input type="text" name="ctc_nm_kn"><br><br>
+  <input type="text" name="ctc_nm_kn" required><br><br>
 
   <label>メールアドレス</label><br>
-  <input type="email" name="ctc_ml"><br><br>
+  <input type="email" name="ctc_ml" required><br><br>
 
   <label>電話番号</label><br>
-  <input type="text" name="ctc_hn"><br><br>
+  <input type="text" name="ctc_hn" required><br><br>
 
   <label>お問い合わせ内容</label><br>
-  <textarea name="ctc_dtl" required></textarea><br><br>
-
+  <textarea name="ctc_dtl" maxlength="1000" required></textarea><br><br>
+  <small>※1000文字以内で入力してください。</small>
   <button type="submit">送信</button>
 
 </form>
