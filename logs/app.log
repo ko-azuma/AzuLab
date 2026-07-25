@@ -1703,3 +1703,68 @@
 2026-07-05 23:51:14,118 INFO: 127.0.0.1 - - [05/Jul/2026 23:51:14] "[32mGET /works/add HTTP/1.1[0m" 302 -
 2026-07-05 23:51:14,438 INFO: 127.0.0.1 - - [05/Jul/2026 23:51:14] "GET /login HTTP/1.1" 200 -
 2026-07-05 23:51:14,453 INFO: 127.0.0.1 - - [05/Jul/2026 23:51:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-05 23:55:22,461 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-05 23:55:22,461 INFO: [33mPress CTRL+C to quit[0m
+2026-07-05 23:55:22,464 INFO:  * Restarting with stat
+2026-07-05 23:55:23,674 WARNING:  * Debugger is active!
+2026-07-05 23:55:23,678 INFO:  * Debugger PIN: 815-551-975
+2026-07-05 23:55:25,217 INFO: 127.0.0.1 - - [05/Jul/2026 23:55:25] "GET / HTTP/1.1" 200 -
+2026-07-05 23:55:25,551 INFO: 127.0.0.1 - - [05/Jul/2026 23:55:25] "GET /static/uploads/9fec1feb-ee00-47da-992f-38e7fb49b68b_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1" 200 -
+2026-07-05 23:55:25,560 INFO: 127.0.0.1 - - [05/Jul/2026 23:55:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-05 23:55:25,593 INFO: 127.0.0.1 - - [05/Jul/2026 23:55:25] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-07-05 23:55:25,604 INFO: 127.0.0.1 - - [05/Jul/2026 23:55:25] "GET /static/uploads/e0ef4f19-ca45-42b1-b531-2a51a06fcaec_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1" 200 -
+2026-07-26 01:10:43,317 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-26 01:10:43,317 INFO: [33mPress CTRL+C to quit[0m
+2026-07-26 01:10:43,319 INFO:  * Restarting with stat
+2026-07-26 01:10:44,491 WARNING:  * Debugger is active!
+2026-07-26 01:10:44,495 INFO:  * Debugger PIN: 815-551-975
+2026-07-26 01:10:56,070 INFO: 127.0.0.1 - - [26/Jul/2026 01:10:56] "GET / HTTP/1.1" 200 -
+2026-07-26 01:10:56,558 INFO: 127.0.0.1 - - [26/Jul/2026 01:10:56] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-07-26 01:10:56,599 INFO: 127.0.0.1 - - [26/Jul/2026 01:10:56] "[36mGET /static/uploads/9fec1feb-ee00-47da-992f-38e7fb49b68b_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-07-26 01:10:56,606 INFO: 127.0.0.1 - - [26/Jul/2026 01:10:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:10:56,610 INFO: 127.0.0.1 - - [26/Jul/2026 01:10:56] "[36mGET /static/uploads/e0ef4f19-ca45-42b1-b531-2a51a06fcaec_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-07-26 01:11:07,570 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:07] "GET /login HTTP/1.1" 200 -
+2026-07-26 01:11:07,616 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:07] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:11:17,425 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:17] "GET / HTTP/1.1" 200 -
+2026-07-26 01:11:27,211 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:27] "GET / HTTP/1.1" 200 -
+2026-07-26 01:11:27,279 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:27] "GET /static/uploads/e0ef4f19-ca45-42b1-b531-2a51a06fcaec_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1" 200 -
+2026-07-26 01:11:27,280 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:11:27,286 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:27] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-07-26 01:11:27,306 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:27] "[36mGET /static/uploads/9fec1feb-ee00-47da-992f-38e7fb49b68b_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-07-26 01:11:27,406 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-26 01:11:30,096 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:30] "GET /login HTTP/1.1" 200 -
+2026-07-26 01:11:30,118 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:11:32,798 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:32] "[32mPOST /login HTTP/1.1[0m" 302 -
+2026-07-26 01:11:32,872 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:32] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 01:11:32,899 INFO: 127.0.0.1 - - [26/Jul/2026 01:11:32] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:21:39,690 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-07-26 01:21:39,690 INFO: [33mPress CTRL+C to quit[0m
+2026-07-26 01:21:39,692 INFO:  * Restarting with stat
+2026-07-26 01:21:40,763 WARNING:  * Debugger is active!
+2026-07-26 01:21:40,768 INFO:  * Debugger PIN: 815-551-975
+2026-07-26 01:21:50,680 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:50] "GET / HTTP/1.1" 200 -
+2026-07-26 01:21:51,325 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:51] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-07-26 01:21:51,326 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:51] "[36mGET /static/uploads/9fec1feb-ee00-47da-992f-38e7fb49b68b_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-07-26 01:21:51,327 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:21:51,328 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:51] "[36mGET /static/uploads/e0ef4f19-ca45-42b1-b531-2a51a06fcaec_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-07-26 01:21:58,945 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:58] "GET / HTTP/1.1" 200 -
+2026-07-26 01:21:59,017 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:59] "[36mGET /static/uploads/9fec1feb-ee00-47da-992f-38e7fb49b68b_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-07-26 01:21:59,025 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:21:59,039 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:59] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -
+2026-07-26 01:21:59,043 INFO: 127.0.0.1 - - [26/Jul/2026 01:21:59] "[36mGET /static/uploads/e0ef4f19-ca45-42b1-b531-2a51a06fcaec_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-07-26 01:22:06,187 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:06] "GET /works/add HTTP/1.1" 200 -
+2026-07-26 01:22:06,210 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:06] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:22:08,260 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:08] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 01:22:08,276 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:22:14,119 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:14] "GET /articles/edit/400f8a88-6 HTTP/1.1" 200 -
+2026-07-26 01:22:14,134 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:14] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:22:27,901 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:27] "[32mPOST /articles/delete/a7f5f1ac-3 HTTP/1.1[0m" 302 -
+2026-07-26 01:22:27,930 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:27] "GET /dashboard HTTP/1.1" 200 -
+2026-07-26 01:22:27,964 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:27] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:22:34,812 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:34] "GET / HTTP/1.1" 200 -
+2026-07-26 01:22:34,837 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-07-26 01:22:34,842 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:34] "[36mGET /static/uploads/9fec1feb-ee00-47da-992f-38e7fb49b68b_ChatGPT_Image_2026524_17_58_15.png HTTP/1.1[0m" 304 -
+2026-07-26 01:22:34,847 INFO: 127.0.0.1 - - [26/Jul/2026 01:22:34] "[36mGET /static/images/profile.png HTTP/1.1[0m" 304 -

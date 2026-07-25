@@ -4,7 +4,7 @@
 <h1 class="page-title">お問い合わせ</h1>
 
 <form method="POST" onsubmit="return confirmSubmit()">
-
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
   <label>お名前</label><br>
   <input type="text" name="ctc_nm" required><br><br>
 

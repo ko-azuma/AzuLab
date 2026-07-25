@@ -4,6 +4,7 @@
 <h1 class="page-title">ログイン</h1>
 
 <form method="POST">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
   <label>メールアドレス（ID）</label><br>
   <input type="text" name="usr_id" required><br><br>

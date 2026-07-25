@@ -4,7 +4,7 @@
 <h1 class="page-title">記事編集</h1>
 
 <form method="POST" enctype="multipart/form-data">
-
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
   <label>記事名</label><br>
   <input type="text" name="blg_nm" value="{{ article.blg_nm }}" required><br><br>
 

@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 from functools import wraps
 from datetime import datetime, timedelta
+from flask_wtf.csrf import CSRFProtect
 
 import os
 import uuid
@@ -31,6 +32,17 @@ admin_password = os.getenv("ADMIN_PASSWORD")
 app = Flask(__name__)
 
 app.config.from_object("config.DevelopmentConfig")
+
+
+# CSRF対策
+csrf = CSRFProtect(app)
+
+# セッションCookie設定
+app.config["SESSION_COOKIE_HTTPONLY"] = True
+app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
+
+# 本番(Render公開後)のみTrueにする
+app.config["SESSION_COOKIE_SECURE"] = False
 
 app.config["UPLOAD_FOLDER"] = os.path.join(
     os.getcwd(),
@@ -83,7 +95,13 @@ def allowed_file(filename):
         filename.rsplit(".", 1)[1].lower()
         in ALLOWED_EXTENSIONS
     )
-
+@app.after_request
+def security_headers(response):
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    return response
 
 def save_image(file):
 

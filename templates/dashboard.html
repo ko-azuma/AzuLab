@@ -27,6 +27,7 @@
           <form method="POST"
                 action="/works/delete/{{ work.wrk_id }}"
                 style="display:inline;">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
             <button type="submit"
                     class="delete-btn"
@@ -68,6 +69,7 @@
           <form method="POST"
                 action="/articles/delete/{{ article.blg_id }}"
                 style="display:inline;">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
             <button type="submit"
                     class="delete-btn"
@@ -112,6 +114,7 @@
 
           <form method="POST"
                 action="/contacts/delete/{{ contact.ctc_id }}">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
             <button type="submit"
                     class="delete-btn"
