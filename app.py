@@ -33,6 +33,12 @@ app = Flask(__name__)
 
 app.config.from_object("config.DevelopmentConfig")
 
+import os
+
+database_url = os.getenv("DATABASE_URL")
+
+if database_url:
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_url
 
 # CSRF対策
 csrf = CSRFProtect(app)
