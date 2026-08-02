@@ -469,6 +469,12 @@ def create_initial_user():
 
     db.session.commit()
 
+    db = SQLAlchemy(app)
+
+with app.app_context():
+    db.create_all()
+    create_initial_user()
+
 
 # =========================
 # TOP
